@@ -101,7 +101,10 @@
                             <div class="mt-4 border-l-4 border-custom-error pl-4 mb-6">
                                 <h4 class="font-bold text-custom-text-primary">Massive skips when Buffering Protection is off</h4>
                                 <p class="mt-2 text-custom-text-secondary text-sm">
-                                    <b>Issue:</b> Disabling "Buffering Protection" can cause large, erratic jumps when the video is buffering, especially in high quality.
+                                    <b>Issue:</b> Disabling "Buffering Protection" can cause large, erratic jumps when the video is buffering, especially with high-quality video (1080p, 4K). This is a limitation of YouTube's player when it's under heavy load.
+                                </p>
+                                <p class="mt-2 text-custom-text-secondary text-sm">
+                                    <b>Workaround:</b> If you experience this, try lowering the video quality or go to the extension's settings and increase the "Seek Throttle (ms)" to 150-250ms. This gives the player more time to catch up.
                                 </p>
                             </div>
                             <div class="mt-4 border-l-4 border-custom-error pl-4">
