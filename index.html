@@ -28,6 +28,9 @@
         }
     </script>
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             font-family: 'Inter', sans-serif;
             background-color: #121212;
@@ -76,6 +79,7 @@
                         <div class="mt-6 bg-custom-milestone-yellow/10 border border-custom-milestone-yellow/30 p-6 rounded-lg text-center">
                             <h3 class="text-2xl font-bold text-custom-milestone-yellow">We did it! 500 Users!</h3>
                             <p class="mt-3 text-custom-text-secondary text-lg">A huge thank you to everyone! We've officially passed <b class="text-custom-text-primary">500 active users</b> across Chrome & Firefox. Thank you for helping us reach this incredible milestone!</p>
+                            <a href="#technical-updates-v4-2-6" class="mt-4 inline-block bg-custom-milestone-yellow/20 text-custom-milestone-yellow font-semibold px-6 py-2 rounded-lg hover:bg-custom-milestone-yellow/30 transition-colors">See what changed in this update</a>
                         </div>
 
                         <div class="mt-6 bg-custom-success/10 p-6 rounded-lg text-center">
@@ -87,9 +91,9 @@
                         <div class="mt-6 bg-black/20 p-6 rounded-lg">
                             <h3 class="text-lg font-semibold text-custom-info">Future Plans</h3>
                              <ul class="list-disc list-inside mt-4 space-y-2 text-custom-text-secondary">
-                                <li>Give users the ability to change the Fast Forward & Rewind Buttons (the arrows with numbers) to whatever they want.</li>
-                                <li>Allow users to create their own skipping indicators for the keyboard shortcuts, with several pre-made designs available.</li>
-                            </ul>
+                                 <li>Give users the ability to change the Fast Forward & Rewind Buttons (the arrows with numbers) to whatever they want.</li>
+                                 <li>Allow users to create their own skipping indicators for the keyboard shortcuts, with several pre-made designs available.</li>
+                             </ul>
                         </div>
 
                         <div class="mt-6 bg-black/20 p-6 rounded-lg">
@@ -107,6 +111,39 @@
                                 </p>
                                 <img src="images/NewYouTubeUI.png" alt="New YouTube Player UI Example" class="mt-4 rounded-lg border border-custom-border" onerror="this.onerror=null;this.src='https://placehold.co/600x300/212121/BDBDBD?text=New+YouTube+UI';">
                             </div>
+                        </div>
+                    </div>
+                </details>
+
+                <details id="technical-updates-v4-2-6" class="bg-custom-surface border border-custom-border rounded-xl shadow-lg" open>
+                    <summary class="flex justify-between items-center p-6 cursor-pointer">
+                        <div class="flex items-center space-x-4">
+                            <span class="bg-custom-info text-white text-xs font-semibold px-2.5 py-1 rounded-full">v4.2.6</span>
+                            <h2 class="text-xl font-semibold text-custom-text-primary">Technical Updates & Fixes</h2>
+                        </div>
+                        <svg class="arrow w-6 h-6 text-custom-text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </summary>
+                    <div class="px-6 pb-6 border-t border-custom-border">
+                        <div class="mt-6 prose prose-invert max-w-none text-custom-text-secondary">
+                            <h3 class="text-lg font-semibold text-custom-text-primary">Update Summary: Stability and Performance Enhancements</h3>
+                            <p>This update focuses on significant behind-the-scenes improvements to the extension's stability, performance, and error handling. All changes are backward compatible and will not interfere with existing functionality or user settings.</p>
+                            
+                            <h4 class="font-semibold text-custom-text-primary mt-4">Key Improvements</h4>
+                            <ul class="list-disc list-inside mt-2 space-y-2">
+                                <li><b>Advanced Settings Validation:</b> Implemented more rigorous type and range checking for all settings. This ensures that only valid data is processed, with graceful fallbacks to default values in case of invalid input.</li>
+                                <li><b>Optimized Video Element Detection:</b> The logic for identifying and interacting with YouTube's video player has been enhanced. It now uses more reliable validation and caching, making the extension more resilient to changes in YouTube's page structure.</li>
+                                <li><b>Efficient Event Listener Management:</b> Switched to a more modern approach for managing event listeners. This prevents potential memory leaks that could degrade browser performance over long sessions.</li>
+                                <li><b>Robust Error Handling & Recovery:</b> Added comprehensive `try-catch` blocks around critical functions. This ensures that if one part of the script encounters an issue, it will not crash the entire extension and will log the error for diagnostics.</li>
+                                <li><b>Safer Asynchronous Operations:</b> All background operations, such as saving settings, are now wrapped in safety checks to handle potential failures without interrupting the user experience.</li>
+                            </ul>
+
+                            <h4 class="font-semibold text-custom-text-primary mt-4">Benefits of This Update</h4>
+                             <ul class="list-disc list-inside mt-2 space-y-2">
+                                <li><b>Increased Stability:</b> The extension is now less susceptible to breaking when YouTube modifies its website.</li>
+                                <li><b>Improved Memory Efficiency:</b> Proper cleanup of components prevents the extension from consuming unnecessary system resources.</li>
+                                <li><b>Enhanced Reliability:</b> The extension can now better handle unexpected edge cases and recover from internal errors gracefully.</li>
+                                <li><b>Future-Proofing:</b> These structural improvements make the codebase easier to maintain and adapt for future updates.</li>
+                            </ul>
                         </div>
                     </div>
                 </details>
