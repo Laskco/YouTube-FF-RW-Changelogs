@@ -5,299 +5,160 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>What's New in YouTube FF/RW</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com/3.4.1?plugins=typography"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'custom-bg': 'rgba(18, 18, 18, 0.97)',
-                        'custom-surface': 'rgba(33, 33, 33, 0.95)',
-                        'custom-text-primary': '#FFFFFF',
-                        'custom-text-secondary': '#BDBDBD',
-                        'custom-border': 'rgba(255, 255, 255, 0.12)',
-                        'custom-success': '#4A90E2',
-                        'custom-success-dark': '#357ABD',
-                        'custom-error': '#EF5350',
-                        'custom-info': '#6c849a',
-                        'custom-supporter-green': '#2ECC71',
-                        'custom-milestone-yellow': '#F1C40F',
+                        'primary': '#0D1117',
+                        'surface': 'rgba(22, 27, 34, 0.75)',
+                        'border': 'rgba(255, 255, 255, 0.1)',
+                        'text-primary': '#F0F6FC',
+                        'text-secondary': '#8B949E',
+                        'accent': '#58A6FF',
+                        'success': '#3FB950',
+                        'warning': '#F7B93E',
+                        'danger': '#F85149',
                     }
                 }
             }
         }
     </script>
     <style>
-        html {
-            scroll-behavior: smooth;
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
+        html { scroll-behavior: smooth; }
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             background-color: #121212;
+            background-image: radial-gradient(at 15% 20%, hsla(212, 75%, 30%, 0.25) 0px, transparent 50%),
+                              radial-gradient(at 85% 90%, hsla(212, 70%, 25%, 0.2) 0px, transparent 50%);
+            animation: fadeIn 1s ease-out;
         }
-        details > summary {
-            list-style: none;
+        .glass-card {
+            background-color: var(--card-bg, rgba(33, 33, 33, 0.7));
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
         }
-        details > summary::-webkit-details-marker {
-            display: none;
+        .timeline {
+            position: relative;
+            padding-left: 1.25rem;
         }
-        details summary .arrow {
-            transition: transform 0.2s;
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0.25rem;
+            top: 0.5rem;
+            bottom: 0.5rem;
+            width: 2px;
+            background-image: linear-gradient(to bottom, #30363D, #30363D 80%, transparent);
         }
-        details[open] summary .arrow {
-            transform: rotate(90deg);
+        .timeline-item { position: relative; }
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        details .arrow { transition: transform 0.3s ease; }
+        details[open] summary .arrow { transform: rotate(90deg); }
+        .details-content {
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
         }
     </style>
 </head>
-<body class="text-custom-text-secondary bg-custom-bg">
+<body class="text-text-primary">
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
         <symbol id="icon-github" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></symbol>
         <symbol id="icon-coffee" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></symbol>
         <symbol id="icon-paypal" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="0"><path d="M20.43705,7.10449a3.82273,3.82273,0,0,0-.57281-.5238,4.72529,4.72529,0,0,0-1.15766-3.73987C17.6226,1.61914,15.77494,1,13.2144,1H7.00053A1.89234,1.89234,0,0,0,5.13725,2.5918L2.5474,18.99805A1.53317,1.53317,0,0,0,4.063,20.7832H6.72709l-.082.52051A1.46684,1.46684,0,0,0,8.0933,23h3.23438a1.76121,1.76121,0,0,0,1.751-1.46973l.64063-4.03125.01074-.05468h.29883c4.03223,0,6.55078-1.99317,7.28516-5.7627A5.149,5.149,0,0,0,20.43705,7.10449ZM7.84233,13.7041l-.71448,4.53528-.08631.54382H4.606L7.09721,3H13.2144c1.93554,0,3.31738.4043,3.99218,1.16406a2.96675,2.96675,0,0,1,.60791,2.73334l-.01861.11224c-.01215.07648-.0232.15119-.0434.24622a5.84606,5.84606,0,0,1-2.00512,3.67053,6.67728,6.67728,0,0,1-4.21753,1.183H9.70658A1.87969,1.87969,0,0,0,7.84233,13.7041Zm11.50878-2.40527c-.55078,2.82812-2.24218,4.14551-5.32226,4.14551h-.4834a1.76109,1.76109,0,0,0-1.751,1.47265l-.64941,4.07422L8.71733,21l.47815-3.03387.61114-3.85285h1.7193c.1568,0,.29541-.02356.44812-.02893.35883-.01239.71661-.02618,1.05267-.06787.20526-.02557.39362-.07221.59034-.1087.27252-.05036.54522-.10016.80108-.17127.19037-.053.368-.12121.54907-.18561.23926-.0849.4748-.174.69757-.27868.168-.0791.32807-.16706.48658-.25727a6.77125,6.77125,0,0,0,.61236-.39172c.14228-.1026.28192-.20789.415-.321a6.56392,6.56392,0,0,0,.53693-.51892c.113-.12055.2287-.23755.33331-.36725a7.09,7.09,0,0,0,.48-.69263c.07648-.12219.16126-.23523.23163-.36383a8.33175,8.33175,0,0,0,.52075-1.15326c.00867-.02386.02106-.044.02954-.068.004-.01123.00989-.02057.01386-.03186A4.29855,4.29855,0,0,1,19.35111,11.29883Z"></path></symbol>
+        <symbol id="icon-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></symbol>
     </svg>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <header class="text-center mb-12">
-            <h1 class="text-4xl font-bold tracking-tight text-custom-text-primary sm:text-5xl">What's New in YouTube FF/RW</h1>
-            <p class="mt-4 text-lg text-custom-text-secondary">Your favorite browser extension just got better. Here's what's new.</p>
-        </header>
+    <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+        <div class="grid grid-cols-1 lg:grid-cols-12 lg:gap-16">
+            
+            <main class="lg:col-span-8">
+                <header class="mb-12">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-text-primary">What's New in YouTube FF/RW</h1>
+                    <p class="mt-4 text-lg sm:text-xl text-text-secondary max-w-3xl">Your favorite browser extension just got better. Here's what's new.</p>
+                </header>
 
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <main class="lg:col-span-2 space-y-6">
-                
-                <details class="bg-custom-surface border border-custom-border rounded-xl shadow-lg" open>
-                    <summary class="flex justify-between items-center p-6 cursor-pointer">
-                        <div class="flex items-center space-x-4">
-                            <span class="bg-custom-success text-white text-xs font-semibold px-2.5 py-1 rounded-full">v4.2.6</span>
-                            <h2 class="text-xl font-semibold text-custom-text-primary">Community, Feedback & Thanks!</h2>
-                        </div>
-                        <svg class="arrow w-6 h-6 text-custom-text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                    </summary>
-                    <div class="px-6 pb-6 border-t border-custom-border">
-                        <p class="text-sm text-gray-500 mt-4">August 12, 2025</p>
+                <div class="timeline">
+                    <div class="timeline-item pb-12">
+                        <p class="text-sm text-accent font-semibold mb-1">LATEST - August 12, 2025</p>
+                        <h2 class="text-3xl font-bold mb-6 text-text-primary">Version 4.2.6: Community, Feedback & Thanks!</h2>
 
-                        <div class="mt-6 bg-custom-milestone-yellow/10 border border-custom-milestone-yellow/30 p-6 rounded-lg text-center">
-                            <h3 class="text-2xl font-bold text-custom-milestone-yellow">We did it! 500 Users!</h3>
-                            <p class="mt-3 text-custom-text-secondary text-lg">A huge thank you to everyone! We've officially passed <b class="text-custom-text-primary">500 active users</b> across Chrome & Firefox. Thank you for helping us reach this incredible milestone!</p>
-                            <a href="#technical-updates-v4-2-6" class="mt-4 inline-block bg-custom-milestone-yellow/20 text-custom-milestone-yellow font-semibold px-6 py-2 rounded-lg hover:bg-custom-milestone-yellow/30 transition-colors">See what changed in this update</a>
-                        </div>
-
-                        <div class="mt-6 bg-custom-success/10 p-6 rounded-lg text-center">
-                            <h3 class="text-lg font-semibold text-custom-success">Your Feedback is Needed!</h3>
-                            <p class="mt-2 text-custom-text-secondary">This extension is built for you. If you have ideas for new features, changes, or improvements that would make your experience better, please share them on GitHub. Your feedback is crucial for the future of this project.</p>
-                            <a href="https://github.com/Laskco/YouTube-Fast-Forward-and-Rewind/issues" target="_blank" class="mt-4 inline-block bg-custom-success text-white font-semibold px-6 py-2 rounded-lg hover:bg-custom-success-dark transition-colors">Provide Feedback</a>
-                        </div>
-                        
-                        <div class="mt-6 bg-black/20 p-6 rounded-lg">
-                            <h3 class="text-lg font-semibold text-custom-info">Future Plans</h3>
-                             <ul class="list-disc list-inside mt-4 space-y-2 text-custom-text-secondary">
-                                 <li>Give users the ability to change the Fast Forward & Rewind Buttons (the arrows with numbers) to whatever they want.</li>
-                                 <li>Allow users to create their own skipping indicators for the keyboard shortcuts, with several pre-made designs available.</li>
-                             </ul>
-                        </div>
-
-                        <div class="mt-6 bg-black/20 p-6 rounded-lg">
-                            <h3 class="text-lg font-semibold text-custom-error">Known Issues</h3>
-                            <div class="mt-4 border-l-4 border-custom-error pl-4 mb-6">
-                                <h4 class="font-bold text-custom-text-primary">Massive skips when Buffering Protection is off</h4>
-                                <p class="mt-2 text-custom-text-secondary text-sm">
-                                    <b>Issue:</b> Disabling "Buffering Protection" can cause large, erratic jumps when the video is buffering, especially with high-quality video (1080p, 4K). This is a limitation of YouTube's player when it's under heavy load.
-                                </p>
-                                <p class="mt-2 text-custom-text-secondary text-sm">
-                                    <b>Workaround:</b> If you experience this, try lowering the video quality or go to the extension's settings and increase the "Seek Throttle (ms)" to 150-250ms. This gives the player more time to catch up.
-                                </p>
+                        <div class="space-y-8">
+                            <div class="glass-card" style="--card-bg: rgba(247, 185, 62, 0.1);"><div class="p-6"><h3 class="text-2xl font-bold text-warning">We did it! 500 Users!</h3><p class="mt-3 text-yellow-200/80 text-lg">A huge thank you to everyone! We've officially passed <b class="text-white">500 active users</b> across Chrome & Firefox. Thank you for helping us reach this incredible milestone!</p><div class="mt-4 text-center"><a href="#technical-updates" class="inline-block bg-warning/20 text-warning font-semibold px-5 py-2 rounded-lg hover:bg-warning/30 transition-colors">See what changed</a></div></div></div>
+                            <div class="glass-card p-6"><h3 class="text-xl font-semibold text-accent">Your Feedback is Needed!</h3><p class="mt-3 text-text-secondary">This extension is built for you. If you have ideas for new features, changes, or improvements, please share them on GitHub. Your feedback is crucial for the future of this project.</p><div class="mt-4 text-center"><a href="https://github.com/Laskco/YouTube-Fast-Forward-and-Rewind/issues" target="_blank" class="inline-block bg-accent text-white font-semibold px-5 py-2 rounded-lg hover:bg-blue-700 transition-colors">Provide Feedback</a></div></div>
+                            <div id="technical-updates" class="glass-card p-6 scroll-mt-24">
+                                <div class="flex items-center gap-x-3">
+                                    <span class="bg-accent text-primary font-bold text-xs px-2.5 py-1 rounded-full">4.2.6</span>
+                                    <h3 class="text-xl font-semibold text-text-primary">Technical Updates & Fixes</h3>
+                                </div>
+                                <div class="mt-4 pt-4 border-t border-border prose prose-invert max-w-none prose-p:text-text-secondary prose-li:text-text-secondary prose-strong:text-text-primary"><p>This update focuses on major behind-the-scenes improvements to make the extension more stable, reliable, and future-proof.</p><h4>Key Improvements</h4><ul><li><strong>Complete Backend Refactor:</strong> The extension's code has been rewritten for improved stability and efficiency, making it less likely to break when YouTube updates its site.</li><li><strong>Smarter Error Handling:</strong> Improved error detection and recovery mean the extension can now handle unexpected issues more gracefully without crashing.</li></ul><h4>Bug Fixes</h4><ul><li><strong>Continuous Seek Fix:</strong> Fixed a bug where holding a hotkey and switching tabs would cause the video to seek indefinitely.</li></ul></div>
                             </div>
-                            <div class="mt-4 border-l-4 border-custom-error pl-4">
-                                <h4 class="font-bold text-custom-text-primary">Potential Incompatibility with New YouTube UI</h4>
-                                <p class="mt-2 text-custom-text-secondary text-sm">
-                                    <b>Warning:</b> YouTube has been testing a new player UI, similar to the Google Drive player. Unfortunately, I have no idea how my extension will react to this change if they push it globally. I have been unlucky and still haven't gotten the new UI yet, so if you have my extension installed and you get the new UI, please let me know on GitHub if the extension completely breaks or not.
-                                </p>
-                                <img src="images/NewYouTubeUI.png" alt="New YouTube Player UI Example" class="mt-4 rounded-lg border border-custom-border" onerror="this.onerror=null;this.src='https://placehold.co/600x300/212121/BDBDBD?text=New+YouTube+UI';">
-                            </div>
+                            <div class="glass-card p-6 bg-accent/10 border-accent/50"><h3 class="text-xl font-semibold text-accent">Future Plans</h3><div class="mt-4 prose prose-invert max-w-none prose-li:text-blue-200/80"><ul><li>Give users the ability to change the Fast Forward & Rewind Buttons to any value they want.</li><li>Allow users to create their own skipping indicators for the keyboard shortcuts, with several pre-made designs available.</li></ul></div></div>
+                            <div class="glass-card p-6 border-danger/50"><h3 class="text-xl font-semibold text-danger">Known Issues</h3><div class="mt-4 pt-4 border-t border-danger/20 prose prose-invert max-w-none prose-p:text-sm prose-p:text-text-secondary prose-strong:text-text-primary"><h4>Massive skips when Buffering Protection is off</h4><p><strong>Issue:</strong> Disabling "Buffering Protection" can cause large, erratic jumps when the video is buffering. This is a limitation of YouTube's player when it's under heavy load.</p><p><strong>Workaround:</strong> If you experience this, try lowering the video quality or go to the extension's settings and increase the "Seek Throttle (ms)" to 150-250ms. This gives the player more time to catch up.</p><hr class="my-6 border-danger/20"><h4>Potential Incompatibility with New YouTube UI</h4><p><strong>Warning:</strong> YouTube is testing a new player UI. As this new design has not been rolled out to us for testing, the extension's compatibility with it is unknown. If you encounter the new UI, please report any issues on GitHub so we can address them.</p><img src="images/NewYouTubeUI.png" alt="New YouTube Player UI Example" class="mt-4 rounded-lg border border-border" onerror="this.onerror=null;this.src='https://placehold.co/600x300/121212/8B949E?text=New+YouTube+UI';"></div></div>
                         </div>
                     </div>
-                </details>
-
-                <details id="technical-updates-v4-2-6" class="bg-custom-surface border border-custom-border rounded-xl shadow-lg scroll-mt-12" open>
-                    <summary class="flex justify-between items-center p-6 cursor-pointer">
-                        <div class="flex items-center space-x-4">
-                            <span class="bg-custom-info text-white text-xs font-semibold px-2.5 py-1 rounded-full">v4.2.6</span>
-                            <h2 class="text-xl font-semibold text-custom-text-primary">Technical Updates & Fixes</h2>
-                        </div>
-                        <svg class="arrow w-6 h-6 text-custom-text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                    </summary>
-                    <div class="px-6 pb-6 border-t border-custom-border">
-                        <div class="mt-6 prose prose-invert max-w-none text-custom-text-secondary">
-                            <h3 class="text-lg font-semibold text-custom-text-primary">Update Summary: Stability and Reliability</h3>
-                            <p>This update focuses on major behind-the-scenes improvements to make the extension more stable, reliable, and future-proof.</p>
-                            
-                            <h4 class="font-semibold text-custom-text-primary mt-4">Key Improvements</h4>
-                            <ul class="list-disc list-inside mt-2 space-y-2">
-                                <li><b>Complete Backend Refactor:</b> The extension's code has been completely rewritten to be more stable, efficient, and reliable. This new foundation makes the extension less likely to break when YouTube updates its site.</li>
-                                <li><b>Smarter Error Handling:</b> Improved error detection and recovery mean the extension can now handle unexpected issues more gracefully without crashing.</li>
-                            </ul>
-
-                            <h4 class="font-semibold text-custom-text-primary mt-4">Bug Fixes</h4>
-                            <ul class="list-disc list-inside mt-2 space-y-2">
-                                <li><b>Continuous Seek Fix:</b> Fixed a bug where holding a hotkey and switching tabs would cause seeking to continue forever.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </details>
-
-                <div class="space-y-6">
-                    <h3 class="text-2xl font-bold text-custom-text-primary border-b border-custom-border pb-2">Previous Versions</h3>
                     
-                    <details class="bg-custom-surface border border-custom-border rounded-xl">
-                        <summary class="flex justify-between items-center p-6 cursor-pointer">
-                            <h2 class="text-lg font-semibold text-custom-text-primary">Version 4.2.5 <span class="text-gray-500 text-sm ml-2">- Aug 3, 2025</span></h2>
-                            <svg class="arrow w-6 h-6 text-custom-text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                        </summary>
-                        <div class="px-6 pb-6 border-t border-custom-border">
-                            <ul class="list-disc list-inside mt-4 space-y-2 text-custom-text-secondary">
-                                <li>Readjusted the Action & Player Timing card for a more compact and clear layout.</li>
-                            </ul>
-                        </div>
-                    </details>
-
-                    <details class="bg-custom-surface border border-custom-border rounded-xl">
-                        <summary class="flex justify-between items-center p-6 cursor-pointer">
-                            <h2 class="text-lg font-semibold text-custom-text-primary">Version 4.2.4 <span class="text-gray-500 text-sm ml-2">- Aug 3, 2025</span></h2>
-                            <svg class="arrow w-6 h-6 text-custom-text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                        </summary>
-                        <div class="px-6 pb-6 border-t border-custom-border">
-                            <h4 class="font-semibold text-custom-text-primary mt-4">Advanced Settings Rework</h4>
-                            <ul class="list-disc list-inside mt-2 space-y-2 text-custom-text-secondary">
-                                <li>Introduced a collapsible "More settings" panel for a cleaner interface.</li>
-                                <li>Added a "Buffering Protection" toggle to give users more control over seeking behavior.</li>
-                            </ul>
-                            <img src="images/whats-new.png" alt="New settings UI" class="mt-4 rounded-lg border border-custom-border" onerror="this.onerror=null;this.src='https://placehold.co/600x300/212121/BDBDBD?text=New+Settings+UI';">
-                        </div>
-                    </details>
-                    
-                    <details class="bg-custom-surface border border-custom-border rounded-xl">
-                        <summary class="flex justify-between items-center p-6 cursor-pointer">
-                            <h2 class="text-lg font-semibold text-custom-text-primary">Version 4.2.3 <span class="text-gray-500 text-sm ml-2">- Jul 27, 2025</span></h2>
-                            <svg class="arrow w-6 h-6 text-custom-text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                        </summary>
-                        <div class="px-6 pb-6 border-t border-custom-border">
-                             <ul class="list-disc list-inside mt-4 space-y-2 text-custom-text-secondary">
-                                 <li>Improved progress bar responsiveness and reliability.</li>
-                                 <li>Extended control visibility during seeking and improved cleanup.</li>
-                                 <li>Fixed memory leaks and optimized performance.</li>
-                             </ul>
-                        </div>
-                    </details>
-                    
-                    <details class="bg-custom-surface border border-custom-border rounded-xl">
-                        <summary class="flex justify-between items-center p-6 cursor-pointer">
-                            <h2 class="text-lg font-semibold text-custom-text-primary">Version 4.2.2 <span class="text-gray-500 text-sm ml-2">- Jul 7, 2025</span></h2>
-                            <svg class="arrow w-6 h-6 text-custom-text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                        </summary>
-                        <div class="px-6 pb-6 border-t border-custom-border">
-                             <ul class="list-disc list-inside mt-4 space-y-2 text-custom-text-secondary">
-                                 <li><b>Major Upgrade to Manifest V3:</b> Improved security and performance.</li>
-                                 <li><b>Settings Saved:</b> Fixed a major bug that reset user settings on update.</li>
-                             </ul>
-                        </div>
-                    </details>
-
-                    <details class="bg-custom-surface border border-custom-border rounded-xl">
-                        <summary class="flex justify-between items-center p-6 cursor-pointer">
-                            <h2 class="text-lg font-semibold text-custom-text-primary">Version 4.2.1 <span class="text-gray-500 text-sm ml-2">- Jul 7, 2025</span></h2>
-                            <svg class="arrow w-6 h-6 text-custom-text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                        </summary>
-                        <div class="px-6 pb-6 border-t border-custom-border">
-                            <ul class="list-disc list-inside mt-4 space-y-2 text-custom-text-secondary">
-                                <li><b>New Icon:</b> Changed the extension icon for better visibility in light mode.</li>
-                            </ul>
-                        </div>
-                    </details>
-
-                    <details class="bg-custom-surface border border-custom-border rounded-xl">
-                        <summary class="flex justify-between items-center p-6 cursor-pointer">
-                            <h2 class="text-lg font-semibold text-custom-text-primary">Version 4.1.1 <span class="text-gray-500 text-sm ml-2">- Jul 1, 2025</span></h2>
-                            <svg class="arrow w-6 h-6 text-custom-text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                        </summary>
-                        <div class="px-6 pb-6 border-t border-custom-border">
-                            <ul class="list-disc list-inside mt-4 space-y-2 text-custom-text-secondary">
-                                <li>Fixed a critical bug causing progress bar stuttering during playback.</li>
-                            </ul>
-                        </div>
-                    </details>
-
-                    <details class="bg-custom-surface border border-custom-border rounded-xl">
-                        <summary class="flex justify-between items-center p-6 cursor-pointer">
-                            <h2 class="text-lg font-semibold text-custom-text-primary">Version 4.1 <span class="text-gray-500 text-sm ml-2">- Jul 1, 2025</span></h2>
-                            <svg class="arrow w-6 h-6 text-custom-text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                        </summary>
-                        <div class="px-6 pb-6 border-t border-custom-border">
-                            <ul class="list-disc list-inside mt-4 space-y-2 text-custom-text-secondary">
-                                <li>Added option to position player buttons on the left or right.</li>
-                                <li>Downscaled icon assets for a smaller extension size.</li>
-                            </ul>
-                        </div>
-                    </details>
-                    
-                    <details class="bg-custom-surface border border-custom-border rounded-xl">
-                        <summary class="flex justify-between items-center p-6 cursor-pointer">
-                            <h2 class="text-lg font-semibold text-custom-text-primary">Version 4.0 <span class="text-gray-500 text-sm ml-2">- Jun 21, 2025</span></h2>
-                            <svg class="arrow w-6 h-6 text-custom-text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                        </summary>
-                        <div class="px-6 pb-6 border-t border-custom-border">
-                             <h4 class="font-semibold text-custom-text-primary mt-4">Major Rework</h4>
-                            <ul class="list-disc list-inside mt-2 space-y-2 text-custom-text-secondary">
-                                <li>Fully customizable hotkeys.</li>
-                                <li>New advanced settings page with Action Delay control.</li>
-                                <li>Redesigned UI with collapsible panels and improved controls.</li>
-                                <li>Robust settings migration to preserve user preferences across updates.</li>
-                            </ul>
-                        </div>
-                    </details>
+                    <div class="timeline-item pb-4"><details><summary class="flex justify-between items-center cursor-pointer py-2 group"><div><h3 class="text-xl font-bold text-text-primary group-hover:text-accent transition-colors">Version 4.2.5</h3><p class="text-sm text-text-secondary">August 3, 2025</p></div><svg class="arrow w-6 h-6 text-text-secondary"><use href="#icon-chevron"></use></svg></summary><div class="details-content"><div class="glass-card my-4 p-6 prose prose-invert max-w-none prose-li:text-text-secondary"><ul><li>Readjusted the Action & Player Timing card for a more compact and clear layout.</li></ul></div></div></details></div>
+                    <div class="timeline-item pb-4"><details><summary class="flex justify-between items-center cursor-pointer py-2 group"><div><h3 class="text-xl font-bold text-text-primary group-hover:text-accent transition-colors">Version 4.2.4</h3><p class="text-sm text-text-secondary">August 3, 2025</p></div><svg class="arrow w-6 h-6 text-text-secondary"><use href="#icon-chevron"></use></svg></summary><div class="details-content"><div class="glass-card my-4 p-6 prose prose-invert max-w-none prose-headings:font-semibold prose-headings:text-text-primary prose-li:text-text-secondary"><h4>Advanced Settings Rework</h4><ul><li>Introduced a collapsible "More settings" panel for a cleaner interface.</li><li>Added a "Buffering Protection" toggle to give users more control over seeking behavior.</li></ul><img src="images/whats-new.png" alt="New settings UI" class="mt-4 rounded-lg border border-border" onerror="this.onerror=null;this.src='https://placehold.co/600x300/121212/8B949E?text=New+Settings+UI';"></div></div></details></div>
+                    <div class="timeline-item pb-4"><details><summary class="flex justify-between items-center cursor-pointer py-2 group"><div><h3 class="text-xl font-bold text-text-primary group-hover:text-accent transition-colors">Version 4.2.3</h3><p class="text-sm text-text-secondary">July 27, 2025</p></div><svg class="arrow w-6 h-6 text-text-secondary"><use href="#icon-chevron"></use></svg></summary><div class="details-content"><div class="glass-card my-4 p-6 prose prose-invert max-w-none prose-li:text-text-secondary"><ul><li>Improved progress bar responsiveness and reliability.</li><li>Extended control visibility during seeking and improved cleanup.</li><li>Fixed memory leaks and optimized performance.</li></ul></div></div></details></div>
+                    <div class="timeline-item pb-4"><details><summary class="flex justify-between items-center cursor-pointer py-2 group"><div><h3 class="text-xl font-bold text-text-primary group-hover:text-accent transition-colors">Version 4.2.2</h3><p class="text-sm text-text-secondary">July 7, 2025</p></div><svg class="arrow w-6 h-6 text-text-secondary"><use href="#icon-chevron"></use></svg></summary><div class="details-content"><div class="glass-card my-4 p-6 prose prose-invert max-w-none prose-li:text-text-secondary prose-strong:text-text-primary"><ul><li><strong>Major Upgrade to Manifest V3:</strong> Improved security and performance.</li><li><strong>Settings Saved:</strong> Fixed a major bug that reset user settings on update.</li></ul></div></div></details></div>
+                    <div class="timeline-item pb-4"><details><summary class="flex justify-between items-center cursor-pointer py-2 group"><div><h3 class="text-xl font-bold text-text-primary group-hover:text-accent transition-colors">Version 4.2.1</h3><p class="text-sm text-text-secondary">July 7, 2025</p></div><svg class="arrow w-6 h-6 text-text-secondary"><use href="#icon-chevron"></use></svg></summary><div class="details-content"><div class="glass-card my-4 p-6 prose prose-invert max-w-none prose-li:text-text-secondary prose-strong:text-text-primary"><ul><li><strong>New Icon:</strong> Changed the extension icon for better visibility in light mode.</li></ul></div></div></details></div>
+                    <div class="timeline-item pb-4"><details><summary class="flex justify-between items-center cursor-pointer py-2 group"><div><h3 class="text-xl font-bold text-text-primary group-hover:text-accent transition-colors">Version 4.1.1</h3><p class="text-sm text-text-secondary">July 1, 2025</p></div><svg class="arrow w-6 h-6 text-text-secondary"><use href="#icon-chevron"></use></svg></summary><div class="details-content"><div class="glass-card my-4 p-6 prose prose-invert max-w-none prose-li:text-text-secondary"><ul><li>Fixed a critical bug causing progress bar stuttering during playback.</li></ul></div></div></details></div>
+                    <div class="timeline-item pb-4"><details><summary class="flex justify-between items-center cursor-pointer py-2 group"><div><h3 class="text-xl font-bold text-text-primary group-hover:text-accent transition-colors">Version 4.1</h3><p class="text-sm text-text-secondary">July 1, 2025</p></div><svg class="arrow w-6 h-6 text-text-secondary"><use href="#icon-chevron"></use></svg></summary><div class="details-content"><div class="glass-card my-4 p-6 prose prose-invert max-w-none prose-li:text-text-secondary"><ul><li>Added option to position player buttons on the left or right.</li><li>Downscaled icon assets for a smaller extension size.</li></ul></div></div></details></div>
+                    <div class="timeline-item pb-4"><details><summary class="flex justify-between items-center cursor-pointer py-2 group"><div><h3 class="text-xl font-bold text-text-primary group-hover:text-accent transition-colors">Version 4.0</h3><p class="text-sm text-text-secondary">June 21, 2025</p></div><svg class="arrow w-6 h-6 text-text-secondary"><use href="#icon-chevron"></use></svg></summary><div class="details-content"><div class="glass-card my-4 p-6 prose prose-invert max-w-none prose-headings:font-semibold prose-headings:text-text-primary prose-li:text-text-secondary"><h4>Major Rework</h4><ul><li>Fully customizable hotkeys.</li><li>New advanced settings page with Action Delay control.</li><li>Redesigned UI with collapsible panels and improved controls.</li><li>Robust settings migration to preserve user preferences across updates.</li></ul></div></div></details></div>
                 </div>
             </main>
 
-            <aside class="space-y-8">
-                <div class="bg-custom-surface border border-custom-border rounded-xl p-6 shadow-lg">
-                    <h3 class="text-xl font-bold text-custom-supporter-green">A Huge Thank You!</h3>
-                    <p class="mt-2 text-custom-text-secondary">This project is made possible by the generous support of people like you. Special thanks to our top supporters:</p>
-                    <div class="mt-6 space-y-4">
-                        <div class="flex items-center justify-between bg-black/20 p-4 rounded-lg">
-                            <span class="font-semibold text-custom-text-primary">Anonymous</span>
-                            <span class="font-bold text-custom-supporter-green text-lg">$100</span>
-                        </div>
-                        <div class="flex items-center justify-between bg-black/20 p-4 rounded-lg">
-                            <span class="font-semibold text-custom-text-primary">Anonymous</span>
-                            <span class="font-bold text-custom-supporter-green text-lg">$50</span>
-                        </div>
-                        <div class="flex items-center justify-between bg-black/20 p-4 rounded-lg">
-                            <span class="font-semibold text-custom-text-primary">Mike</span>
-                            <span class="font-bold text-custom-supporter-green text-lg">$10</span>
-                        </div>
-                         <div class="flex items-center justify-between bg-black/20 p-4 rounded-lg">
-                            <span class="font-semibold text-custom-text-primary">Mitchell</span>
-                            <span class="font-bold text-custom-supporter-green text-lg">$10</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-custom-surface border border-custom-border rounded-xl p-6 shadow-lg">
-                    <h3 class="text-xl font-bold text-custom-text-primary">Support the Project</h3>
-                    <p class="mt-2 text-custom-text-secondary">This project will be kept alive whether or not I receive monetary gain from it. However, if you find it useful, consider supporting its development.</p>
-                    <div class="mt-6 flex justify-center space-x-4">
-                        <a href="https://github.com/Laskco/YouTube-Fast-Forward-and-Rewind" target="_blank" class="text-custom-text-secondary hover:text-custom-text-primary transition-colors" title="GitHub">
-                            <svg class="w-8 h-8"><use href="#icon-github"></use></svg>
-                        </a>
-                        <a href="https://buymeacoffee.com/laskco" target="_blank" class="text-custom-text-secondary hover:text-custom-text-primary transition-colors" title="Buy Me a Coffee">
-                            <svg class="w-8 h-8"><use href="#icon-coffee"></use></svg>
-                        </a>
-                        <a href="https://www.paypal.com/donate/?hosted_button_id=R87TNQANCT8KN" target="_blank" class="text-custom-text-secondary hover:text-custom-text-primary transition-colors" title="PayPal">
-                            <svg class="w-8 h-8"><use href="#icon-paypal"></use></svg>
-                        </a>
-                    </div>
-                </div>
+            <aside class="lg:col-span-4 lg:sticky lg:top-16 self-start mt-12 lg:mt-0 space-y-8">
+                <div class="glass-card p-6"><h3 class="text-xl font-bold text-success">A Huge Thank You!</h3><p class="mt-2 text-text-secondary">This project is made possible by the generous support of people like you. Special thanks to our top supporters:</p><div class="mt-6 space-y-3"><div class="flex items-center justify-between bg-primary/50 p-3 rounded-lg"><span class="font-semibold text-text-primary">Anonymous</span><span class="font-bold text-success text-lg">$100</span></div><div class="flex items-center justify-between bg-primary/50 p-3 rounded-lg"><span class="font-semibold text-text-primary">Anonymous</span><span class="font-bold text-success text-lg">$50</span></div><div class="flex items-center justify-between bg-primary/50 p-3 rounded-lg"><span class="font-semibold text-text-primary">Mike</span><span class="font-bold text-success text-lg">$10</span></div><div class="flex items-center justify-between bg-primary/50 p-3 rounded-lg"><span class="font-semibold text-text-primary">Mitchell</span><span class="font-bold text-success text-lg">$10</span></div></div></div>
+                <div class="glass-card p-6"><h3 class="text-xl font-bold text-text-primary">Support the Project</h3><p class="mt-2 text-text-secondary">This project will be kept alive whether or not I receive monetary gain from it. However, if you find it useful, consider supporting its development.</p><div class="mt-6 flex justify-center space-x-6"><a href="https://github.com/Laskco/YouTube-Fast-Forward-and-Rewind" target="_blank" class="text-text-secondary hover:text-white transition-colors" title="GitHub"><svg class="w-8 h-8"><use href="#icon-github"></use></svg></a><a href="https://buymeacoffee.com/laskco" target="_blank" class="text-text-secondary hover:text-white transition-colors" title="Buy Me a Coffee"><svg class="w-8 h-8"><use href="#icon-coffee"></use></svg></a><a href="https://www.paypal.com/donate/?hosted_button_id=R87TNQANCT8KN" target="_blank" class="text-text-secondary hover:text-white transition-colors" title="PayPal"><svg class="w-8 h-8"><use href="#icon-paypal"></use></svg></a></div></div>
             </aside>
         </div>
     </div>
+
+    <script>
+        document.querySelectorAll('details').forEach((el) => {
+            const summary = el.querySelector('summary');
+            const content = el.querySelector('.details-content');
+
+            if (!el.open) {
+                content.style.maxHeight = '0px';
+            } else {
+                content.style.maxHeight = `${content.scrollHeight}px`;
+            }
+
+            summary.addEventListener('click', (event) => {
+                event.preventDefault();
+
+                if (el.dataset.animating) return;
+                el.dataset.animating = 'true';
+
+                if (el.open) {
+                    content.style.maxHeight = '0px';
+                    
+                    content.addEventListener('transitionend', () => {
+                        el.removeAttribute('open');
+                        el.dataset.animating = '';
+                    }, { once: true });
+
+                } else {
+                    el.setAttribute('open', '');
+                    content.style.maxHeight = `${content.scrollHeight}px`;
+
+                    content.addEventListener('transitionend', () => {
+                        el.dataset.animating = '';
+                    }, { once: true });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
