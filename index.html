@@ -82,14 +82,14 @@
             
             <main class="lg:col-span-8">
                 <header class="mb-12">
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-text-primary">What's New in YouTube FF/RW</h1>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extold text-text-primary">What's New in YouTube FF/RW</h1>
                     <p class="mt-4 text-lg sm:text-xl text-text-secondary max-w-3xl">Your favorite browser extension just got better. Here's what's new.</p>
                 </header>
 
                 <div class="timeline">
                     <div class="timeline-item pb-12">
-                        <p class="text-sm text-accent font-semibold mb-1">LATEST - August 12, 2025</p>
-                        <h2 class="text-3xl font-bold mb-6 text-text-primary">Version 4.2.6: Community, Feedback & Thanks!</h2>
+                        <p class="text-sm text-accent font-semibold mb-1">LATEST - August 19, 2025</p>
+                        <h2 class="text-3xl font-bold mb-6 text-text-primary">Version 4.2.7: Performance, Polish & Easter Eggs!</h2>
 
                         <div class="space-y-8">
                             <div class="glass-card" style="--card-bg: rgba(247, 185, 62, 0.1);">
@@ -110,16 +110,46 @@
                             </div>
                             <div id="technical-updates" class="glass-card p-6 scroll-mt-24">
                                 <div class="flex items-center gap-x-3">
-                                    <span class="bg-accent text-primary font-bold text-xs px-2.5 py-1 rounded-full">4.2.6</span>
-                                    <h3 class="text-xl font-semibold text-text-primary">Technical Updates & Fixes</h3>
+                                    <span class="bg-accent text-primary font-bold text-xs px-2.5 py-1 rounded-full">4.2.7</span>
+                                    <h3 class="text-xl font-semibold text-text-primary">Performance, Polish & Fixes</h3>
                                 </div>
-                                <div class="mt-4 pt-4 border-t border-border prose prose-invert max-w-none prose-p:text-text-secondary prose-li:text-text-secondary prose-strong:text-text-primary"><p>This update focuses on major behind-the-scenes improvements to make the extension more stable, reliable, and future-proof.</p><h4>Key Improvements</h4><ul><li><strong>Complete Backend Refactor:</strong> The extension's code has been rewritten for improved stability and efficiency, making it less likely to break when YouTube updates its site.</li><li><strong>Smarter Error Handling:</strong> Improved error detection and recovery mean the extension can now handle unexpected issues more gracefully without crashing.</li></ul><h4>Bug Fixes</h4><ul><li><strong>Continuous Seek Fix:</strong> Fixed a bug where holding a hotkey and switching tabs would cause the video to seek indefinitely.</li></ul></div>
+                                <div class="mt-4 pt-4 border-t border-border prose prose-invert max-w-none prose-p:text-text-secondary prose-li:text-text-secondary prose-strong:text-text-primary">
+                                    <h4>Bug Fixes</h4>
+                                    <ul>
+                                        <li>Fixed CSS typo affecting light theme button hovers.</li>
+                                        <li>Fixed accessibility issue where hidden tooltips were read by screen readers.</li>
+                                        <li>Fixed skip indicator overlay blocking YouTube menus/captions.</li>
+                                        <li>Fixed duplicate button injection and leftover listeners.</li>
+                                        <li>Fixed keyboard shortcuts to reliably override YouTube defaults.</li>
+                                        <li>Fixed need to re-toggle keyboard shortcuts — they now persist correctly.</li>
+                                        <li>Fixed skip indicator sometimes staying after navigation.</li>
+                                        <li>Fixed popup sections not closing when switching panels or clicking outside.</li>
+                                    </ul>
+                                    <h4>Performance</h4>
+                                    <ul>
+                                        <li>Reduced DOM lookups by caching elements.</li>
+                                        <li>Cleaned up observers/listeners properly when navigating.</li>
+                                        <li>Throttled progress updates to prevent spam.</li>
+                                        <li>Debounced settings saves to reduce storage writes.</li>
+                                        <li>Lazy-loaded advanced settings listeners.</li>
+                                        <li>Improved animation smoothness.</li>
+                                    </ul>
+                                    <h4>Features</h4>
+                                    <ul>
+                                        <li>Stats now sync across devices with Firefox Sync.</li>
+                                        <li>Updated advanced settings warning text.</li>
+                                        <li>Clearer descriptions for adjustable tweaks.</li>
+                                        <li>Added fade/slide animations to popup sections.</li>
+                                        <li>Added an easter egg.</li>
+                                    </ul>
+                                </div>
                             </div>
                             <div class="glass-card p-6 bg-accent/10 border-accent/50"><h3 class="text-xl font-semibold text-accent">Future Plans</h3><div class="mt-4 prose prose-invert max-w-none prose-li:text-blue-200/80"><ul><li>Give users the ability to change the Fast Forward & Rewind Buttons to any value they want.</li><li>Allow users to create their own skipping indicators for the keyboard shortcuts, with several pre-made designs available.</li></ul></div></div>
                             <div class="glass-card p-6 border-danger/50"><h3 class="text-xl font-semibold text-danger">Known Issues</h3><div class="mt-4 pt-4 border-t border-danger/20 prose prose-invert max-w-none prose-p:text-sm prose-p:text-text-secondary prose-strong:text-text-primary"><h4>Massive skips when Buffering Protection is off</h4><p><strong>Issue:</strong> Disabling "Buffering Protection" can cause large, erratic jumps while skipping when the video is buffering. This is a limitation of YouTube's player when it's under heavy load.</p><p><strong>Workaround:</strong> If you experience this, try lowering the video quality or go to the extension's settings and increase the "Seek Throttle (ms)" to 150-250ms. This gives the player more time to catch up.</p><hr class="my-6 border-danger/20"><h4>Potential Incompatibility with New YouTube UI</h4><p><strong>Warning:</strong> YouTube is testing a new player UI. As this new design has not been rolled out to us for testing, the extension's compatibility with it is unknown. If you encounter the new UI, please report any issues on GitHub so we can address them.</p><img src="images/NewYouTubeUI.png" alt="New YouTube Player UI Example" class="mt-4 rounded-lg border border-border" onerror="this.onerror=null;this.src='https://placehold.co/600x300/121212/8B949E?text=New+YouTube+UI';"></div></div>
                         </div>
                     </div>
                     
+                    <div class="timeline-item pb-4"><details><summary class="flex justify-between items-center cursor-pointer py-2 group"><div><h3 class="text-xl font-bold text-text-primary group-hover:text-accent transition-colors">Version 4.2.6</h3><p class="text-sm text-text-secondary">August 12, 2025</p></div><svg class="arrow w-6 h-6 text-text-secondary"><use href="#icon-chevron"></use></svg></summary><div class="details-content"><div class="glass-card my-4 p-6 prose prose-invert max-w-none prose-headings:font-semibold prose-headings:text-text-primary prose-li:text-text-secondary"><p>This update focuses on major behind-the-scenes improvements to make the extension more stable, reliable, and future-proof.</p><h4>Key Improvements</h4><ul><li><strong>Complete Backend Refactor:</strong> The extension's code has been rewritten for improved stability and efficiency, making it less likely to break when YouTube updates its site.</li><li><strong>Smarter Error Handling:</strong> Improved error detection and recovery mean the extension can now handle unexpected issues more gracefully without crashing.</li></ul><h4>Bug Fixes</h4><ul><li><strong>Continuous Seek Fix:</strong> Fixed a bug where holding a hotkey and switching tabs would cause the video to seek indefinitely.</li></ul></div></div></details></div>
                     <div class="timeline-item pb-4"><details><summary class="flex justify-between items-center cursor-pointer py-2 group"><div><h3 class="text-xl font-bold text-text-primary group-hover:text-accent transition-colors">Version 4.2.5</h3><p class="text-sm text-text-secondary">August 3, 2025</p></div><svg class="arrow w-6 h-6 text-text-secondary"><use href="#icon-chevron"></use></svg></summary><div class="details-content"><div class="glass-card my-4 p-6 prose prose-invert max-w-none prose-li:text-text-secondary"><ul><li>Readjusted the Action & Player Timing card for a more compact and clear layout.</li></ul></div></div></details></div>
                     <div class="timeline-item pb-4"><details><summary class="flex justify-between items-center cursor-pointer py-2 group"><div><h3 class="text-xl font-bold text-text-primary group-hover:text-accent transition-colors">Version 4.2.4</h3><p class="text-sm text-text-secondary">August 3, 2025</p></div><svg class="arrow w-6 h-6 text-text-secondary"><use href="#icon-chevron"></use></svg></summary><div class="details-content"><div class="glass-card my-4 p-6 prose prose-invert max-w-none prose-headings:font-semibold prose-headings:text-text-primary prose-li:text-text-secondary"><h4>Advanced Settings Rework</h4><ul><li>Introduced a collapsible "More settings" panel for a cleaner interface.</li><li>Added a "Buffering Protection" toggle to give users more control over seeking behavior.</li></ul><img src="images/whats-new.png" alt="New settings UI" class="mt-4 rounded-lg border border-border" onerror="this.onerror=null;this.src='https://placehold.co/600x300/121212/8B949E?text=New+Settings+UI';"></div></div></details></div>
                     <div class="timeline-item pb-4"><details><summary class="flex justify-between items-center cursor-pointer py-2 group"><div><h3 class="text-xl font-bold text-text-primary group-hover:text-accent transition-colors">Version 4.2.3</h3><p class="text-sm text-text-secondary">July 27, 2025</p></div><svg class="arrow w-6 h-6 text-text-secondary"><use href="#icon-chevron"></use></svg></summary><div class="details-content"><div class="glass-card my-4 p-6 prose prose-invert max-w-none prose-li:text-text-secondary"><ul><li>Improved progress bar responsiveness and reliability.</li><li>Extended control visibility during seeking and improved cleanup.</li><li>Fixed memory leaks and optimized performance.</li></ul></div></div></details></div>
