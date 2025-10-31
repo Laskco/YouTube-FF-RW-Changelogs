@@ -87,8 +87,8 @@
 
                 <div class="timeline">
                     <div class="timeline-item pb-12">
-                        <p class="text-sm text-accent font-semibold mb-1">LATEST - August 27, 2025</p>
-                        <h2 class="text-3xl font-bold mb-6 text-text-primary">Version 4.2.8: Smarter Buttons & Code Optimizations</h2>
+                        <p class="text-sm text-accent font-semibold mb-1">LATEST - November 1, 2025</p>
+                        <h2 class="text-3xl font-bold mb-6 text-text-primary">Version 4.3.0: New YouTube UI Support</h2>
 
                         <div class="space-y-8">
                             <div class="glass-card" style="--card-bg: rgba(247, 185, 62, 0.1);">
@@ -111,10 +111,58 @@
 
                             <div id="technical-updates" class="glass-card p-6 scroll-mt-24">
                                 <div class="flex items-center gap-x-3">
-                                    <span class="bg-accent text-primary font-bold text-xs px-2.5 py-1 rounded-full">4.2.8</span>
-                                    <h3 class="text-xl font-semibold text-text-primary">Improved Feedback & Performance</h3>
+                                    <span class="bg-accent text-primary font-bold text-xs px-2.5 py-1 rounded-full">4.3.0</span>
+                                    <h3 class="text-xl font-semibold text-text-primary">YouTube's New UI Support</h3>
                                 </div>
                                 <div class="mt-4 pt-4 border-t border-border prose prose-invert max-w-none prose-p:text-text-secondary prose-li:text-text-secondary prose-strong:text-text-primary">
+                                    <h4>What's New</h4>
+                                    <ul>
+                                        <li><strong>Full Support for New YouTube UI:</strong> The extension now works seamlessly with YouTube's updated player design that's rolling out to all users.</li>
+                                        <li><strong>Better Button Icons:</strong> Replaced old PNG icons with crisp SVG graphics that look perfect at any size.</li>
+                                        <li><strong>Improved Button Injection:</strong> Fixed several bugs where buttons wouldn't show up or would appear in the wrong place.</li>
+                                        <li><strong>Smoother Animations:</strong> Button appearance and transitions are now more fluid and reliable.</li>
+                                    </ul>
+                                    <h4>Technical Improvements</h4>
+                                    <ul>
+                                        <li>Rewrote how buttons are created and placed on the page for better compatibility.</li>
+                                        <li>Fixed timing issues that could cause buttons to not appear right away.</li>
+                                        <li>Improved how the extension detects and responds to YouTube's player changes.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="glass-card p-6 bg-accent/10 border-accent/50">
+                                <h3 class="text-xl font-semibold text-accent">Future Goals</h3>
+                                <div class="mt-4 prose prose-invert max-w-none prose-li:text-blue-200/80">
+                                    <ul>
+                                        <li>Let you customize the fast forward and rewind buttons to any design you want.</li>
+                                        <li>Create your own skip indicators for keyboard shortcuts, with several pre-made designs to choose from.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="glass-card p-6 border-danger/50">
+                                <h3 class="text-xl font-semibold text-danger">Known Issues</h3>
+                                <div class="mt-4 pt-4 border-t border-danger/20 prose prose-invert max-w-none prose-p:text-sm prose-p:text-text-secondary prose-strong:text-text-primary">
+                                    <h4>Large skips when Buffering Protection is off</h4>
+                                    <p><strong>Issue:</strong> If you turn off "Buffering Protection," the video might jump around weirdly when it's buffering. This happens because YouTube's player gets confused when it's loading.</p>
+                                    <p><strong>Fix:</strong> Try lowering your video quality, or go to settings and increase "Seek Throttle (ms)" to 150-250ms. This gives YouTube more time to catch up.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item pb-4">
+                        <details>
+                            <summary class="flex justify-between items-center cursor-pointer py-2 group">
+                                <div>
+                                    <h3 class="text-xl font-bold text-text-primary group-hover:text-accent transition-colors">Version 4.2.8</h3>
+                                    <p class="text-sm text-text-secondary">August 27, 2025</p>
+                                </div>
+                                <svg class="arrow w-6 h-6 text-text-secondary"><use href="#icon-chevron"></use></svg>
+                            </summary>
+                            <div class="details-content">
+                                <div class="glass-card my-4 p-6 prose prose-invert max-w-none prose-headings:font-semibold prose-headings:text-text-primary prose-li:text-text-secondary">
                                     <h4>Improvements</h4>
                                     <ul>
                                         <li><strong>Button Click Feedback:</strong> All buttons now have a more dynamic and responsive press animation.</li>
@@ -124,34 +172,11 @@
                                     <h4>Bug Fixes</h4>
                                     <ul>
                                         <li><strong>Advanced Settings Panel:</strong> Fixed an issue that caused the advanced settings panel to close when its border or scrollbar was clicked.</li>
-                                        <li><strong>Button Animation:</strong> Corrected an issue where the button loading animation would sometimes lag or appear inconsistent. (Still not 100% fixed) Will have to rewrite a bunch of stuff)</li>
+                                        <li><strong>Button Animation:</strong> Corrected an issue where the button loading animation would sometimes lag or appear inconsistent.</li>
                                     </ul>
                                 </div>
                             </div>
-
-                            <div class="glass-card p-6 bg-accent/10 border-accent/50">
-                                <h3 class="text-xl font-semibold text-accent">Future Plans</h3>
-                                <div class="mt-4 prose prose-invert max-w-none prose-li:text-blue-200/80">
-                                    <ul>
-                                        <li>Give users the ability to change the Fast Forward & Rewind Buttons to any value they want.</li>
-                                        <li>Allow users to create their own skipping indicators for the keyboard shortcuts, with several pre-made designs available.</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="glass-card p-6 border-danger/50">
-                                <h3 class="text-xl font-semibold text-danger">Known Issues</h3>
-                                <div class="mt-4 pt-4 border-t border-danger/20 prose prose-invert max-w-none prose-p:text-sm prose-p:text-text-secondary prose-strong:text-text-primary">
-                                    <h4>Massive skips when Buffering Protection is off</h4>
-                                    <p><strong>Issue:</strong> Disabling "Buffering Protection" can cause large, erratic jumps while skipping when the video is buffering. This is a limitation of YouTube's player when it's under heavy load.</p>
-                                    <p><strong>Workaround:</strong> If you experience this, try lowering the video quality or go to the extension's settings and increase the "Seek Throttle (ms)" to 150-250ms. This gives the player more time to catch up.</p>
-                                    <hr class="my-6 border-danger/20">
-                                    <h4>Potential Incompatibility with New YouTube UI</h4>
-                                    <p><strong>Warning:</strong> YouTube is testing a new player UI. As this new design has not been rolled out to us for testing, the extension's compatibility with it is unknown. If you encounter the new UI, please report any issues on GitHub so we can address them.</p>
-                                    <img src="images/NewYouTubeUI.png" alt="New YouTube Player UI Example" class="mt-4 rounded-lg border border-border" onerror="this.onerror=null;this.src='https://placehold.co/600x300/121212/8B949E?text=New+YouTube+UI';">
-                                </div>
-                            </div>
-                        </div>
+                        </details>
                     </div>
 
                     <div class="timeline-item pb-4">
@@ -442,30 +467,40 @@
             const summary = el.querySelector('summary');
             const content = el.querySelector('.details-content');
 
+            // Initialize max-height for CSS transitions
             if (!el.open) {
                 content.style.maxHeight = '0px';
             } else {
+                // Set initial max-height for already open details
                 content.style.maxHeight = `${content.scrollHeight}px`;
             }
 
             summary.addEventListener('click', (event) => {
+                // Prevent default browser behavior
                 event.preventDefault();
 
+                // Prevent spamming the click
                 if (el.dataset.animating) return;
                 el.dataset.animating = 'true';
 
                 if (el.open) {
+                    // Start closing animation
                     content.style.maxHeight = '0px';
                     
+                    // When transition ends, set 'open' attribute to false
                     content.addEventListener('transitionend', () => {
                         el.removeAttribute('open');
                         el.dataset.animating = '';
                     }, { once: true });
 
                 } else {
+                    // Set 'open' attribute to true
                     el.setAttribute('open', '');
+                    
+                    // Start opening animation
                     content.style.maxHeight = `${content.scrollHeight}px`;
 
+                    // When transition ends, remove animating flag
                     content.addEventListener('transitionend', () => {
                         el.dataset.animating = '';
                     }, { once: true });
