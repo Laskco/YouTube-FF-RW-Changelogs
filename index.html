@@ -87,8 +87,8 @@
 
                 <div class="timeline">
                     <div class="timeline-item pb-12">
-                        <p class="text-sm text-accent font-semibold mb-1">LATEST - November 1, 2025</p>
-                        <h2 class="text-3xl font-bold mb-6 text-text-primary">Version 4.3.0: New YouTube UI Support</h2>
+                        <p class="text-sm text-accent font-semibold mb-1">LATEST - November 2nd, 2025</p>
+                        <h2 class="text-3xl font-bold mb-6 text-text-primary">Version 4.3.1: Stability & Performance</h2>
 
                         <div class="space-y-8">
                             <div class="glass-card" style="--card-bg: rgba(247, 185, 62, 0.1);">
@@ -111,23 +111,38 @@
 
                             <div id="technical-updates" class="glass-card p-6 scroll-mt-24">
                                 <div class="flex items-center gap-x-3">
-                                    <span class="bg-accent text-primary font-bold text-xs px-2.5 py-1 rounded-full">4.3.0</span>
-                                    <h3 class="text-xl font-semibold text-text-primary">YouTube's New UI Support</h3>
+                                    <span class="bg-accent text-primary font-bold text-xs px-2.5 py-1 rounded-full">4.3.1</span>
+                                    <h3 class="text-xl font-semibold text-text-primary">Stability & Performance Update</h3>
                                 </div>
                                 <div class="mt-4 pt-4 border-t border-border prose prose-invert max-w-none prose-p:text-text-secondary prose-li:text-text-secondary prose-strong:text-text-primary">
-                                    <h4>What's New</h4>
-                                    <ul>
-                                        <li><strong>Full Support for New YouTube UI:</strong> The extension now works seamlessly with YouTube's updated player design that's rolling out to all users.</li>
-                                        <li><strong>Better Button Icons:</strong> Replaced old PNG icons with crisp SVG graphics that look perfect at any size.</li>
-                                        <li><strong>Improved Button Injection:</strong> Fixed several bugs where buttons wouldn't show up or would appear in the wrong place.</li>
-                                        <li><strong>Smoother Animations:</strong> Button appearance and transitions are now more fluid and reliable.</li>
-                                    </ul>
-                                    <h4>Technical Improvements</h4>
-                                    <ul>
-                                        <li>Rewrote how buttons are created and placed on the page for better compatibility.</li>
-                                        <li>Fixed timing issues that could cause buttons to not appear right away.</li>
-                                        <li>Improved how the extension detects and responds to YouTube's player changes.</li>
-                                    </ul>
+                                    <p>Focused on stability, performance, and reliability improvements across all systems. Fixed major popup issues, optimized background performance, and refined error handling.</p>
+									<h3>Major Changes:</h3>
+									<ul>
+									  <li>Fixed critical popup loading issue that caused the menu to freeze or fail to appear</li>
+									  <li>Improved extension stability with added checks for missing YouTube elements</li>
+									  <li>Resolved race condition where background scripts continued running after disable</li>
+									  <li>Corrected theme synchronization issue affecting background color updates</li>
+									  <li>Unified all error handling under a single centralized system</li>
+									  <li>Verified and confirmed correct saving and loading of custom preset values</li>
+									</ul>
+									<h3>Performance:</h3>
+									<ul>
+									  <li>Reduced CPU usage by optimizing hold-to-seek and progress bar update logic</li>
+									  <li>Adjusted “Progress Bar Update Delay” from 10ms to 150ms for smoother and more stable playback</li>
+									  <li>Improved communication between popup and tabs to only target active YouTube videos</li>
+									  <li>Reduced redundant update calls and unnecessary background activity</li>
+									</ul>
+									<h3>Interface & Experience:</h3>
+									<ul>
+									  <li>Updated hold-to-seek icons with a redesigned triple-chevron layout for better clarity</li>
+									  <li>Unified appearance and behavior of all indicators for consistent visual feedback</li>
+									</ul>
+									<h3>Code Quality:</h3>
+									<ul>
+									  <li>Removed unused settings (“Action Delay” and “Seek Throttle”) to simplify configuration</li>
+									  <li>Refactored internal logic and variable naming for improved maintainability</li>
+									  <li>Enhanced defensive coding practices throughout for better fault tolerance</li>
+									</ul>
                                 </div>
                             </div>
 
@@ -150,6 +165,35 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+
+                    <div class="timeline-item pb-4">
+                        <details>
+                            <summary class="flex justify-between items-center cursor-pointer py-2 group">
+                                <div>
+                                    <h3 class="text-xl font-bold text-text-primary group-hover:text-accent transition-colors">Version 4.3.0</h3>
+                                    <p class="text-sm text-text-secondary">November 1, 2025</p>
+                                </div>
+                                <svg class="arrow w-6 h-6 text-text-secondary"><use href="#icon-chevron"></use></svg>
+                            </summary>
+                            <div class="details-content">
+                                <div class="glass-card my-4 p-6 prose prose-invert max-w-none prose-headings:font-semibold prose-headings:text-text-primary prose-li:text-text-secondary">
+                                    <h4>What's New</h4>
+                                    <ul>
+                                        <li><strong>Full Support for New YouTube UI:</strong> The extension now works seamlessly with YouTube's updated player design that's rolling out to all users.</li>
+                                        <li><strong>Better Button Icons:</strong> Replaced old PNG icons with crisp SVG graphics that look perfect at any size.</li>
+                                        <li><strong>Improved Button Injection:</strong> Fixed several bugs where buttons wouldn't show up or would appear in the wrong place.</li>
+                                        <li><strong>Smoother Animations:</strong> Button appearance and transitions are now more fluid and reliable.</li>
+                                    </ul>
+                                    <h4>Technical Improvements</h4>
+                                    <ul>
+                                        <li>Rewrote how buttons are created and placed on the page for better compatibility.</li>
+                                        <li>Fixed timing issues that could cause buttons to not appear right away.</li>
+                                        <li>Improved how the extension detects and responds to YouTube's player changes.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </details>
                     </div>
 
                     <div class="timeline-item pb-4">
@@ -382,7 +426,7 @@
                             </summary>
                             <div class="details-content">
                                 <div class="glass-card my-4 p-6 prose prose-invert max-w-none prose-li:text-text-secondary">
-                                    <ul>
+                                     <ul>
                                         <li>Added option to position player buttons on the left or right.</li>
                                         <li>Downscaled icon assets for a smaller extension size.</li>
                                     </ul>
@@ -417,7 +461,7 @@
             </main>
 
             <aside class="lg:col-span-4 lg:sticky lg:top-16 self-start mt-12 lg:mt-0 space-y-8">
-                <div class="glass-card p-6">
+                <div class="glass-card p-6 text-center">
                     <h3 class="text-xl font-bold text-success">A Huge Thank You!</h3>
                     <p class="mt-2 text-text-secondary">This project is made possible by the generous support of people like you. Special thanks to our top supporters:</p>
                     <div class="mt-6 space-y-3">
@@ -447,14 +491,14 @@
                     <h3 class="text-xl font-bold text-text-primary">Support the Project</h3>
                     <p class="mt-2 text-text-secondary">This project will be kept alive whether or not I receive monetary gain from it. However, if you find it useful, consider supporting its development.</p>
                     <div class="mt-6 flex justify-center space-x-6">
-                        <a href="https://github.com/Laskco/YouTube-Fast-Forward-and-Rewind" target="_blank" class="text-text-secondary hover:text-white transition-colors" title="GitHub">
-                            <svg class="w-8 h-8"><use href="#icon-github"></use></svg>
+                        <a href="https://github.com/Laskco/YouTube-Fast-Forward-and-Rewind" target="_blank" class="text-gray-400 hover:text-white transition-colors" title="GitHub">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-github"></use></svg>
                         </a>
-                        <a href="https://buymeacoffee.com/laskco" target="_blank" class="text-text-secondary hover:text-white transition-colors" title="Buy Me a Coffee">
-                            <svg class="w-8 h-8"><use href="#icon-coffee"></use></svg>
+                        <a href="https://buymeacoffee.com/laskco" target="_blank" class="text-yellow-500 hover:text-yellow-400 transition-colors" title="Buy Me a Coffee">
+                             <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-coffee"></use></svg>
                         </a>
-                        <a href="https://www.paypal.com/donate/?hosted_button_id=R87TNQANCT8KN" target="_blank" class="text-text-secondary hover:text-white transition-colors" title="PayPal">
-                            <svg class="w-8 h-8"><use href="#icon-paypal"></use></svg>
+                        <a href="https://www.paypal.com/donate/?hosted_button_id=R87TNQANCT8KN" target="_blank" class="text-blue-500 hover:text-blue-400 transition-colors" title="PayPal">
+                            <svg class="w-8 h-8" fill="currentColor"><use href="#icon-paypal"></use></svg>
                         </a>
                     </div>
                 </div>
@@ -467,44 +511,28 @@
             const summary = el.querySelector('summary');
             const content = el.querySelector('.details-content');
 
-            // Initialize max-height for CSS transitions
-            if (!el.open) {
-                content.style.maxHeight = '0px';
-            } else {
-                // Set initial max-height for already open details
+            if (el.open) {
                 content.style.maxHeight = `${content.scrollHeight}px`;
+            } else {
+                content.style.maxHeight = '0px';
             }
 
             summary.addEventListener('click', (event) => {
-                // Prevent default browser behavior
                 event.preventDefault();
-
-                // Prevent spamming the click
                 if (el.dataset.animating) return;
                 el.dataset.animating = 'true';
 
                 if (el.open) {
-                    // Start closing animation
                     content.style.maxHeight = '0px';
-                    
-                    // When transition ends, set 'open' attribute to false
-                    content.addEventListener('transitionend', () => {
-                        el.removeAttribute('open');
-                        el.dataset.animating = '';
-                    }, { once: true });
-
+                    el.removeAttribute('open');
                 } else {
-                    // Set 'open' attribute to true
                     el.setAttribute('open', '');
-                    
-                    // Start opening animation
                     content.style.maxHeight = `${content.scrollHeight}px`;
-
-                    // When transition ends, remove animating flag
-                    content.addEventListener('transitionend', () => {
-                        el.dataset.animating = '';
-                    }, { once: true });
                 }
+                
+                content.addEventListener('transitionend', () => {
+                    el.dataset.animating = '';
+                }, { once: true });
             });
         });
     </script>
