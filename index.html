@@ -551,11 +551,22 @@
             const progressBar = document.getElementById('progress-bar');
             const userCountText = document.getElementById('user-count-text');
             const goal = 1000;
+            const addonId = 'youtube-fast-forward-rewind';
+            const chromeUserCount = 248;
 
-            function getUserCounts() {
-                const chromeUsers = 248;
-                const firefoxUsers = 412; 
-                return chromeUsers + firefoxUsers;
+            async function getFirefoxUserCount() {
+                try {
+                    const response = await fetch(`https://img.shields.io/amo/users/${addonId}.json`);
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    const data = await response.json();
+                    const userString = data.value.replace('k', '000');
+                    return parseInt(userString, 10) || 0;
+                } catch (error) {
+                    console.error("Failed to fetch Firefox user count:", error);
+                    return 412;
+                }
             }
 
             function updateProgressBar(currentUserCount) {
@@ -583,8 +594,10 @@
                 }, 100);
             }
 
-            const totalUsers = getUserCounts();
-            updateProgressBar(totalUsers);
+            getFirefoxUserCount().then(firefoxUsers => {
+                const totalUsers = chromeUserCount + firefoxUsers;
+                updateProgressBar(totalUsers);
+            });
         });
     </script>
 </body>
