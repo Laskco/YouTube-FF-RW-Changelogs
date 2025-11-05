@@ -91,12 +91,23 @@
                         <h2 class="text-3xl font-bold mb-6 text-text-primary">Version 4.3.1: Stability & Performance</h2>
 
                         <div class="space-y-8">
-                            <div class="glass-card" style="--card-bg: rgba(247, 185, 62, 0.1);">
+                            <div class="glass-card" style="--card-bg: rgba(63, 185, 80, 0.1);">
                                 <div class="p-6">
-                                    <h3 class="text-2xl font-bold text-warning text-center">We did it! 500 Users!</h3>
-                                    <p class="mt-3 text-yellow-200/80 text-lg text-center">A huge thank you to everyone! We've officially passed <b class="text-white">500 active users</b> across Chrome & Firefox. Thank you for helping us reach this incredible milestone!</p>
-                                    <div class="mt-4 text-center">
-                                        <a href="#technical-updates" class="inline-block bg-warning/20 text-warning font-semibold px-5 py-2 rounded-lg hover:bg-warning/30 transition-colors">See what changed</a>
+                                    <h3 class="text-2xl font-bold text-success text-center">Let's Hit Our Next Goal!</h3>
+                                    <p class="mt-3 text-green-200/80 text-lg text-center">A huge thank you to everyone! We've officially passed <b class="text-white">500 active users</b>. Now, let's push for our next milestone of 1,000 users!</p>
+                                    
+                                    <div class="mt-6">
+                                        <div class="flex justify-between items-center mb-2 text-sm font-medium">
+                                            <span id="user-count-text" class="text-text-primary">Loading users...</span>
+                                            <span class="text-text-secondary">Goal: 1,000</span>
+                                        </div>
+                                        <div class="w-full bg-primary/80 rounded-full h-4 border border-border">
+                                            <div id="progress-bar" class="bg-success h-full rounded-full transition-all duration-1000 ease-out" style="width: 0%;"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mt-6 text-center">
+                                        <a href="#technical-updates" class="inline-block bg-success/20 text-success font-semibold px-5 py-2 rounded-lg hover:bg-success/30 transition-colors">See what changed</a>
                                     </div>
                                 </div>
                             </div>
@@ -507,33 +518,73 @@
     </div>
 
     <script>
-        document.querySelectorAll('details').forEach((el) => {
-            const summary = el.querySelector('summary');
-            const content = el.querySelector('.details-content');
-
-            if (el.open) {
-                content.style.maxHeight = `${content.scrollHeight}px`;
-            } else {
-                content.style.maxHeight = '0px';
-            }
-
-            summary.addEventListener('click', (event) => {
-                event.preventDefault();
-                if (el.dataset.animating) return;
-                el.dataset.animating = 'true';
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('details').forEach((el) => {
+                const summary = el.querySelector('summary');
+                const content = el.querySelector('.details-content');
 
                 if (el.open) {
-                    content.style.maxHeight = '0px';
-                    el.removeAttribute('open');
-                } else {
-                    el.setAttribute('open', '');
                     content.style.maxHeight = `${content.scrollHeight}px`;
+                } else {
+                    content.style.maxHeight = '0px';
                 }
-                
-                content.addEventListener('transitionend', () => {
-                    el.dataset.animating = '';
-                }, { once: true });
+
+                summary.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    if (el.dataset.animating) return;
+                    el.dataset.animating = 'true';
+
+                    if (el.open) {
+                        content.style.maxHeight = '0px';
+                        el.removeAttribute('open');
+                    } else {
+                        el.setAttribute('open', '');
+                        content.style.maxHeight = `${content.scrollHeight}px`;
+                    }
+                    
+                    content.addEventListener('transitionend', () => {
+                        el.dataset.animating = '';
+                    }, { once: true });
+                });
             });
+
+            const progressBar = document.getElementById('progress-bar');
+            const userCountText = document.getElementById('user-count-text');
+            const goal = 1000;
+
+            function getUserCounts() {
+                const chromeUsers = 248;
+                const firefoxUsers = 412; 
+                return chromeUsers + firefoxUsers;
+            }
+
+            function updateProgressBar(currentUserCount) {
+                const percentage = Math.min((currentUserCount / goal) * 100, 100);
+                
+                let animatedCount = 0;
+                const duration = 1000;
+                const frameDuration = 1000 / 60;
+                const totalFrames = Math.round(duration / frameDuration);
+                const countIncrement = currentUserCount / totalFrames;
+
+                const animateCount = () => {
+                    animatedCount += countIncrement;
+                    if (animatedCount < currentUserCount) {
+                        userCountText.textContent = `${Math.ceil(animatedCount).toLocaleString()} / ${goal.toLocaleString()} Users`;
+                        requestAnimationFrame(animateCount);
+                    } else {
+                        userCountText.textContent = `${currentUserCount.toLocaleString()} / ${goal.toLocaleString()} Users`;
+                    }
+                };
+                requestAnimationFrame(animateCount);
+
+                setTimeout(() => {
+                    progressBar.style.width = `${percentage}%`;
+                }, 100);
+            }
+
+            const totalUsers = getUserCounts();
+            updateProgressBar(totalUsers);
         });
     </script>
 </body>
