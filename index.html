@@ -87,8 +87,8 @@
 
                 <div class="timeline">
                     <div class="timeline-item pb-12">
-                        <p class="text-sm text-accent font-semibold mb-1">LATEST - November 2nd, 2025</p>
-                        <h2 class="text-3xl font-bold mb-6 text-text-primary">Version 4.3.1: Stability & Performance</h2>
+                        <p class="text-sm text-accent font-semibold mb-1">LATEST - November 11th, 2025</p>
+                        <h2 class="text-3xl font-bold mb-6 text-text-primary">Version 4.3.2: Minor Bug Fix</h2>
 
                         <div class="space-y-8">
                             <div class="glass-card" style="--card-bg: rgba(63, 185, 80, 0.1);">
@@ -107,7 +107,7 @@
                                     </div>
 
                                     <div class="mt-6 text-center">
-                                        <a href="#technical-updates" class="inline-block bg-success/20 text-success font-semibold px-5 py-2 rounded-lg hover:bg-success/30 transition-colors">See what changed</a>
+                                        <a href="#v432-changes" class="inline-block bg-success/20 text-success font-semibold px-5 py-2 rounded-lg hover:bg-success/30 transition-colors">See what changed</a>
                                     </div>
                                 </div>
                             </div>
@@ -117,6 +117,25 @@
                                 <p class="mt-3 text-text-secondary text-center">This extension is built for you. If you have ideas for new features, changes, or improvements, please share them on GitHub. Your feedback is crucial for the future of this project.</p>
                                 <div class="mt-4 text-center">
                                     <a href="https://github.com/Laskco/YouTube-Fast-Forward-and-Rewind/issues" target="_blank" class="inline-block bg-accent text-white font-semibold px-5 py-2 rounded-lg hover:bg-blue-700 transition-colors">Provide Feedback</a>
+                                </div>
+                            </div>
+
+                            <div id="v432-changes" class="glass-card p-6 scroll-mt-24">
+                                <div class="flex items-center gap-x-3">
+                                    <span class="bg-accent text-primary font-bold text-xs px-2.5 py-1 rounded-full">4.3.2</span>
+                                    <h3 class="text-xl font-semibold text-text-primary">Minor Bug Fix</h3>
+                                </div>
+                                <div class="mt-4 pt-4 border-t border-border prose prose-invert max-w-none prose-p:text-text-secondary prose-li:text-text-secondary prose-strong:text-text-primary">
+                                    <p>Minor bug fix release improving user experience in the settings interface.</p>
+									<h3>Bug Fixes:</h3>
+									<ul>
+									  <li>Fixed advanced settings panel closing when using the scrollbar in settings view
+                                        <ul>
+                                            <li>Changed click-away detection logic to only trigger when clicking on other settings cards</li>
+                                            <li>Scrollbar interactions and empty space clicks no longer inadvertently close the panel</li>
+                                        </ul>
+                                      </li>
+									</ul>
                                 </div>
                             </div>
 
@@ -602,4 +621,3 @@
     </script>
 </body>
 </html>
-
