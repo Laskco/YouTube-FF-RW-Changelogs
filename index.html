@@ -86,11 +86,13 @@
                 </header>
 
                 <div class="timeline">
+                    <!-- Version 4.3.5 (New) -->
                     <div class="timeline-item pb-12">
-                        <p class="text-sm text-accent font-semibold mb-1">LATEST - November 16th, 2025</p>
-                        <h2 class="text-3xl font-bold mb-6 text-text-primary">Version 4.3.4: UI Tweak</h2>
+                        <p class="text-sm text-accent font-semibold mb-1">LATEST - December 29th, 2025</p>
+                        <h2 class="text-3xl font-bold mb-6 text-text-primary">Version 4.3.5: License Update</h2>
 
                         <div class="space-y-8">
+                            <!-- Goal Card (Moved to Latest) -->
                             <div class="glass-card" style="--card-bg: rgba(63, 185, 80, 0.1);">
                                 <div class="p-6">
                                     <h3 class="text-2xl font-bold text-success text-center">Let's Hit Our Next Goal!</h3>
@@ -105,13 +107,10 @@
                                             <div id="progress-bar" class="bg-success h-full rounded-full transition-all duration-1000 ease-out" style="width: 0%;"></div>
                                         </div>
                                     </div>
-
-                                    <div class="mt-6 text-center">
-                                        <a href="#v433-changes" class="inline-block bg-success/20 text-success font-semibold px-5 py-2 rounded-lg hover:bg-success/30 transition-colors">See what changed</a>
-                                    </div>
                                 </div>
                             </div>
 
+                            <!-- Feedback Card (Moved to Latest) -->
                             <div class="glass-card p-6">
                                 <h3 class="text-xl font-semibold text-accent text-center">Your Feedback is Needed!</h3>
                                 <p class="mt-3 text-text-secondary text-center">This extension is built for you. If you have ideas for new features, changes, or improvements, please share them on GitHub. Your feedback is crucial for the future of this project.</p>
@@ -120,28 +119,62 @@
                                 </div>
                             </div>
 
-                            <div id="v433-changes" class="glass-card p-6 scroll-mt-24">
+                            <!-- 4.3.5 Changes -->
+                            <div id="v435-changes" class="glass-card p-6 scroll-mt-24">
                                 <div class="flex items-center gap-x-3">
-                                    <span class="bg-accent text-primary font-bold text-xs px-2.5 py-1 rounded-full">4.3.4</span>
-                                    <h3 class="text-xl font-semibold text-text-primary">UI Tweak</h3>
+                                    <span class="bg-accent text-primary font-bold text-xs px-2.5 py-1 rounded-full">4.3.5</span>
+                                    <h3 class="text-xl font-semibold text-text-primary">MIT License & Open Source</h3>
                                 </div>
                                 <div class="mt-4 pt-4 border-t border-border prose prose-invert max-w-none prose-p:text-text-secondary prose-li:text-text-secondary prose-strong:text-text-primary">
-                                    <p>A minor UI Tweak to refine the positioning of the forward and rewind buttons.</p>
-									<h3>UI Changes:</h3>
-									<ul>
-									  <li><strong>Improved Button Placement:</strong> The Fast-Forward and Rewind buttons have been repositioned for a better fit within the player's control bar.</li>
-									  <li><strong>Tighter Alignment (Left Position):</strong> When the buttons are set to the <strong>left side</strong>, they are now shifted to sit perfectly flush next to the time display, removing the previous gap.</li>
-                                      <li><strong>No Change for Right Position:</strong> This adjustment <strong>only</strong> affects the left-side layout. The button placement on the right side of the player remains unchanged.</li>
-									</ul>
+                                    <p>The project is now officially released under the <strong>MIT License</strong>. This change clarifies the legal standing of the extension and ensures it remains open and safe for everyone to use.</p>
+                                    <h3>What this means for you:</h3>
+                                    <ul>
+                                        <li><strong>Open Source Forever:</strong> The code is free to inspect, learn from, and modify.</li>
+                                        <li><strong>Zero Liability:</strong> The software is provided "as is," protecting the project while allowing broad adoption.</li>
+                                        <li><strong>Commercial Use:</strong> You are free to use this code in your own projects, including commercial ones.</li>
+                                    </ul>
+                                    <p class="text-sm italic mt-4">We believe in software freedom and want to ensure that this tool remains a community-friendly resource indefinitely.</p>
                                 </div>
                             </div>
-							
-                            <div id="v432-changes" class="glass-card p-6 scroll-mt-24">
-                                <div class="flex items-center gap-x-3">
-                                    <span class="bg-accent text-primary font-bold text-xs px-2.5 py-1 rounded-full">4.3.2</span>
-                                    <h3 class="text-xl font-semibold text-text-primary">Minor Bug Fix</h3>
+                        </div>
+                    </div>
+
+                    <!-- Version 4.3.4 (Collapsed) -->
+                    <div class="timeline-item pb-4">
+                        <details>
+                            <summary class="flex justify-between items-center cursor-pointer py-2 group">
+                                <div>
+                                    <h3 class="text-xl font-bold text-text-primary group-hover:text-accent transition-colors">Version 4.3.4</h3>
+                                    <p class="text-sm text-text-secondary">November 16th, 2025</p>
                                 </div>
-                                <div class="mt-4 pt-4 border-t border-border prose prose-invert max-w-none prose-p:text-text-secondary prose-li:text-text-secondary prose-strong:text-text-primary">
+                                <svg class="arrow w-6 h-6 text-text-secondary"><use href="#icon-chevron"></use></svg>
+                            </summary>
+                            <div class="details-content">
+                                <div class="glass-card my-4 p-6 prose prose-invert max-w-none prose-p:text-text-secondary prose-li:text-text-secondary prose-strong:text-text-primary">
+                                    <p>A minor UI Tweak to refine the positioning of the forward and rewind buttons.</p>
+                                    <h3>UI Changes:</h3>
+                                    <ul>
+                                        <li><strong>Improved Button Placement:</strong> The Fast-Forward and Rewind buttons have been repositioned for a better fit within the player's control bar.</li>
+                                        <li><strong>Tighter Alignment (Left Position):</strong> When the buttons are set to the <strong>left side</strong>, they are now shifted to sit perfectly flush next to the time display, removing the previous gap.</li>
+                                        <li><strong>No Change for Right Position:</strong> This adjustment <strong>only</strong> affects the left-side layout. The button placement on the right side of the player remains unchanged.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+
+                    <!-- Version 4.3.2 (Collapsed) -->
+                    <div class="timeline-item pb-4">
+                        <details>
+                            <summary class="flex justify-between items-center cursor-pointer py-2 group">
+                                <div>
+                                    <h3 class="text-xl font-bold text-text-primary group-hover:text-accent transition-colors">Version 4.3.2</h3>
+                                    <p class="text-sm text-text-secondary">November 10th, 2025</p>
+                                </div>
+                                <svg class="arrow w-6 h-6 text-text-secondary"><use href="#icon-chevron"></use></svg>
+                            </summary>
+                            <div class="details-content">
+                                <div class="glass-card my-4 p-6 prose prose-invert max-w-none prose-p:text-text-secondary prose-li:text-text-secondary prose-strong:text-text-primary">
                                     <p>Minor bug fix release improving user experience in the settings interface.</p>
 									<h3>Bug Fixes:</h3>
 									<ul>
@@ -154,63 +187,35 @@
 									</ul>
                                 </div>
                             </div>
-
-                            <div id="technical-updates" class="glass-card p-6 scroll-mt-24">
-                                <div class="flex items-center gap-x-3">
-                                    <span class="bg-accent text-primary font-bold text-xs px-2.5 py-1 rounded-full">4.3.1</span>
-                                    <h3 class="text-xl font-semibold text-text-primary">Stability & Performance Update</h3>
+                        </details>
+                    </div>
+                    
+                    <!-- Version 4.3.1 (Collapsed) -->
+                    <div class="timeline-item pb-4">
+                        <details>
+                            <summary class="flex justify-between items-center cursor-pointer py-2 group">
+                                <div>
+                                    <h3 class="text-xl font-bold text-text-primary group-hover:text-accent transition-colors">Version 4.3.1</h3>
+                                    <p class="text-sm text-text-secondary">November 5th, 2025</p>
                                 </div>
-                                <div class="mt-4 pt-4 border-t border-border prose prose-invert max-w-none prose-p:text-text-secondary prose-li:text-text-secondary prose-strong:text-text-primary">
-                                    <p>Focused on stability, performance, and reliability improvements across all systems. Fixed major popup issues, optimized background performance, and refined error handling.</p>
-									<h3>Major Changes:</h3>
-									<ul>
-									  <li>Fixed critical popup loading issue that caused the menu to freeze or fail to appear</li>
-									  <li>Improved extension stability with added checks for missing YouTube elements</li>
-									  <li>Resolved race condition where background scripts continued running after disable</li>
-									  <li>Corrected theme synchronization issue affecting background color updates</li>
-									  <li>Unified all error handling under a single centralized system</li>
-									  <li>Verified and confirmed correct saving and loading of custom preset values</li>
-									</ul>
-									<h3>Performance:</h3>
-									<ul>
-									  <li>Reduced CPU usage by optimizing hold-to-seek and progress bar update logic</li>
-									  <li>Adjusted “Progress Bar Update Delay” from 10ms to 150ms for smoother and more stable playback</li>
-									  <li>Improved communication between popup and tabs to only target active YouTube videos</li>
-									  <li>Reduced redundant update calls and unnecessary background activity</li>
-									</ul>
-									<h3>Interface & Experience:</h3>
-									<ul>
-									  <li>Updated hold-to-seek icons with a redesigned triple-chevron layout for better clarity</li>
-									  <li>Unified appearance and behavior of all indicators for consistent visual feedback</li>
-									</ul>
-									<h3>Code Quality:</h3>
-									<ul>
-									  <li>Removed unused settings (“Action Delay” and “Seek Throttle”) to simplify configuration</li>
-									  <li>Refactored internal logic and variable naming for improved maintainability</li>
-									  <li>Enhanced defensive coding practices throughout for better fault tolerance</li>
-									</ul>
-                                </div>
-                            </div>
-
-                            <div class="glass-card p-6 bg-accent/10 border-accent/50">
-                                <h3 class="text-xl font-semibold text-accent">Future Goals</h3>
-                                <div class="mt-4 prose prose-invert max-w-none prose-li:text-blue-200/80">
+                                <svg class="arrow w-6 h-6 text-text-secondary"><use href="#icon-chevron"></use></svg>
+                            </summary>
+                            <div class="details-content">
+                                <div class="glass-card my-4 p-6 prose prose-invert max-w-none prose-headings:font-semibold prose-headings:text-text-primary prose-li:text-text-secondary">
+                                    <p>Focused on stability, performance, and reliability improvements across all systems.</p>
+                                    <h4>Major Changes</h4>
                                     <ul>
-                                        <li>Let you customize the fast forward and rewind buttons to any design you want.</li>
-                                        <li>Create your own skip indicators for keyboard shortcuts, with several pre-made designs to choose from.</li>
+                                        <li>Fixed critical popup loading issue.</li>
+                                        <li>Resolved race condition where background scripts continued running after disable.</li>
+                                    </ul>
+                                    <h4>Performance</h4>
+                                    <ul>
+                                        <li>Reduced CPU usage by optimizing hold-to-seek logic.</li>
+                                        <li>Adjusted update delays for smoother playback.</li>
                                     </ul>
                                 </div>
                             </div>
-
-                            <div class="glass-card p-6 border-danger/50">
-                                <h3 class="text-xl font-semibold text-danger">Known Issues</h3>
-                                <div class="mt-4 pt-4 border-t border-danger/20 prose prose-invert max-w-none prose-p:text-sm prose-p:text-text-secondary prose-strong:text-text-primary">
-                                    <h4>Large skips when Buffering Protection is off</h4>
-                                    <p><strong>Issue:</strong> If you turn off "Buffering Protection," the video might jump around weirdly when it's buffering. This happens because YouTube's player gets confused when it's loading.</p>
-                                    <p><strong>Fix:</strong> Try lowering your video quality, or go to settings and increase "Seek Throttle (ms)" to 150-250ms. This gives YouTube more time to catch up.</p>
-                                </div>
-                            </div>
-                        </div>
+                        </details>
                     </div>
 
                     <div class="timeline-item pb-4">
@@ -230,12 +235,6 @@
                                         <li><strong>Better Button Icons:</strong> Replaced old PNG icons with crisp SVG graphics that look perfect at any size.</li>
                                         <li><strong>Improved Button Injection:</strong> Fixed several bugs where buttons wouldn't show up or would appear in the wrong place.</li>
                                         <li><strong>Smoother Animations:</strong> Button appearance and transitions are now more fluid and reliable.</li>
-                                    </ul>
-                                    <h4>Technical Improvements</h4>
-                                    <ul>
-                                        <li>Rewrote how buttons are created and placed on the page for better compatibility.</li>
-                                        <li>Fixed timing issues that could cause buttons to not appear right away.</li>
-                                        <li>Improved how the extension detects and responds to YouTube's player changes.</li>
                                     </ul>
                                 </div>
                             </div>
@@ -285,30 +284,16 @@
                                         <li>Fixed CSS typo affecting light theme button hovers.</li>
                                         <li>Fixed accessibility issue where hidden tooltips were read by screen readers.</li>
                                         <li>Fixed skip indicator overlay blocking YouTube menus/captions.</li>
-                                        <li>Fixed duplicate button injection and leftover listeners.</li>
-                                        <li>Fixed keyboard shortcuts to reliably override YouTube defaults.</li>
-                                        <li>Fixed need to re-toggle keyboard shortcuts — they now persist correctly.</li>
-                                        <li>Fixed skip indicator sometimes staying after navigation.</li>
-                                        <li>Fixed popup sections not closing when switching panels or clicking outside.</li>
                                     </ul>
                                     <h4>Performance</h4>
                                     <ul>
                                         <li>Reduced DOM lookups by caching elements.</li>
-                                        <li>Cleaned up observers/listeners properly when navigating.</li>
-                                        <li>Throttled progress updates to prevent spam.</li>
                                         <li>Debounced settings saves to reduce storage writes.</li>
-                                        <li>Lazy-loaded advanced settings listeners.</li>
-                                        <li>Improved animation smoothness.</li>
                                     </ul>
                                     <h4>Features</h4>
                                     <ul>
-                                        <li><b>New Advanced Setting:</b> Added a "Progress Bar Update Delay" setting for fine-tuning player UI responsiveness after seeking.</li>
-                                        <li><b>New Advanced Setting:</b> Added a "Navigation Init Delay" setting to control script initialization timing, improving stability on slower connections.</li>
-                                        <li>Stats now sync across devices with Firefox Sync.</li>
-                                        <li>Updated advanced settings warning text.</li>
-                                        <li>Clearer descriptions for adjustable tweaks.</li>
-                                        <li>Added fade/slide animations to popup sections.</li>
-                                        <li>Added an easter egg.</li>
+                                        <li><b>New Advanced Setting:</b> Added a "Progress Bar Update Delay" setting.</li>
+                                        <li><b>New Advanced Setting:</b> Added a "Navigation Init Delay" setting.</li>
                                     </ul>
                                 </div>
                             </div>
@@ -331,10 +316,6 @@
                                     <ul>
                                         <li><strong>Complete Backend Refactor:</strong> The extension's code has been rewritten for improved stability and efficiency, making it less likely to break when YouTube updates its site.</li>
                                         <li><strong>Smarter Error Handling:</strong> Improved error detection and recovery mean the extension can now handle unexpected issues more gracefully without crashing.</li>
-                                    </ul>
-                                    <h4>Bug Fixes</h4>
-                                    <ul>
-                                        <li><strong>Continuous Seek Fix:</strong> Fixed a bug where holding a hotkey and switching tabs would cause the video to seek indefinitely.</li>
                                     </ul>
                                 </div>
                             </div>
@@ -376,7 +357,6 @@
                                         <li>Introduced a collapsible "More settings" panel for a cleaner interface.</li>
                                         <li>Added a "Buffering Protection" toggle to give users more control over seeking behavior.</li>
                                     </ul>
-                                    <img src="images/whats-new.png" alt="New settings UI" class="mt-4 rounded-lg border border-border" onerror="this.onerror=null;this.src='https://placehold.co/600x300/121212/8B949E?text=New+Settings+UI';">
                                 </div>
                             </div>
                         </details>
@@ -625,11 +605,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
