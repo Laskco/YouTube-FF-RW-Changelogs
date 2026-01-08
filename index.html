@@ -128,11 +128,10 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION (Reduced Height) -->
+    <!-- HERO SECTION -->
     <header class="relative min-h-[75vh] flex flex-col justify-center items-center text-center px-4 z-10 overflow-hidden pt-32 pb-16">
         <div class="hero-anim absolute w-[600px] h-[600px] bg-electric-blue rounded-full blur-[120px] opacity-5 -z-10"></div>
         
-        <!-- UPDATED VERSION TEXT HERE -->
         <p class="hero-text text-electric-blue font-mono text-sm tracking-widest mb-4 opacity-0 transform translate-y-4">VERSION 4.3.6</p>
         
         <h1 class="hero-text text-4xl md:text-6xl lg:text-8xl font-display uppercase tracking-tighter leading-tight py-4 mb-6 opacity-0 transform translate-y-8">
@@ -165,8 +164,9 @@
         </div>
 
         <!-- PROGRESS BAR SECTION -->
-        <div class="hero-text w-full max-w-md opacity-0 transform translate-y-4">
-            <div class="tech-card p-6 rounded-2xl">
+        <!-- Added relative & z-20 to ensure it's above background elements -->
+        <div class="hero-text w-full max-w-md opacity-0 transform translate-y-4 relative z-20">
+            <div class="tech-card p-6 rounded-2xl relative">
                 <div class="flex justify-between items-center mb-3">
                     <span class="font-mono text-xs uppercase text-gray-400">Project Milestone</span>
                     <span class="font-mono text-xs text-electric-blue" id="user-count-text">Loading...</span>
@@ -176,11 +176,12 @@
                 </div>
                 <p class="text-xs text-gray-500 mt-3 font-mono text-center">GOAL: 5,000 ACTIVE USERS</p>
                 
-                <!-- Quicklink -->
-                <div class="mt-4 pt-4 border-t border-white/5 text-center">
-                    <a href="#changelog" class="inline-flex items-center gap-2 text-[10px] font-mono uppercase text-electric-blue hover:text-white transition-colors group cursor-pointer">
-                        View System Logs
-                        <svg class="w-3 h-3 transform group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                <!-- Quicklink / View System Logs Button -->
+                <!-- UPDATED: Flex Center, Z-Index, larger padding -->
+                <div class="mt-4 pt-2 border-t border-white/5 flex justify-center w-full relative z-30">
+                    <a href="#changelog" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg hover:bg-white/5 active:scale-95 transition-all duration-200 group cursor-pointer">
+                        <span class="text-[11px] font-mono uppercase text-electric-blue group-hover:text-white transition-colors tracking-wide">View System Logs</span>
+                        <svg class="w-3 h-3 text-electric-blue group-hover:text-white transform group-hover:translate-y-0.5 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </a>
                 </div>
             </div>
@@ -195,7 +196,7 @@
 
     <main class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
         
-        <!-- SYSTEM CAPABILITIES (Tighter spacing) -->
+        <!-- SYSTEM CAPABILITIES -->
         <section class="py-16">
             <div class="flex items-end justify-between mb-8 border-b border-white/10 pb-4">
                 <h2 class="text-xl font-display uppercase tracking-widest">Key Features</h2>
@@ -260,7 +261,7 @@
             </div>
         </section>
 
-        <!-- KNOWN ISSUES SECTION (Tighter spacing) -->
+        <!-- KNOWN ISSUES SECTION -->
         <section class="py-12">
             <div class="flex items-end justify-between mb-8 border-b border-white/10 pb-4">
                 <h2 class="text-xl font-display uppercase tracking-widest text-warning">Known Issues</h2>
@@ -308,7 +309,7 @@
             </div>
         </section>
 
-        <!-- CHANGELOG (Tighter spacing) -->
+        <!-- CHANGELOG -->
         <section id="changelog" class="py-16 relative">
             <div class="flex items-end justify-between mb-12 border-b border-white/10 pb-4">
                 <h2 class="text-xl font-display uppercase tracking-widest">System Logs</h2>
@@ -338,7 +339,7 @@
                 </div>
             </div>
 
-            <!-- 4.3.5 (Moved to archive style) -->
+            <!-- 4.3.5 -->
             <div class="log-entry relative grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 opacity-60 hover:opacity-100 transition-opacity duration-500">
                 <div class="md:text-right md:pr-12 order-1 md:order-1">
                     <h3 class="text-2xl font-display uppercase mb-2 text-gray-400">v4.3.5</h3>
@@ -588,7 +589,7 @@
 
         </section>
 
-        <!-- FOOTER (Tighter spacing) -->
+        <!-- FOOTER -->
         <footer class="py-16 border-t border-white/10">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div>
@@ -667,7 +668,8 @@
         }, "-=1.5");
 
         // Feature Cards Fade In
-        gsap.utils.toArray('.tech-card, .issue-card').forEach(card => {
+        // MODIFIED SELECTOR: Only target cards inside <main>, avoiding the one in <header>
+        gsap.utils.toArray('main .tech-card, .issue-card').forEach(card => {
             gsap.from(card, {
                 scrollTrigger: {
                     trigger: card,
