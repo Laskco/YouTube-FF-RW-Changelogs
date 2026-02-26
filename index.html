@@ -104,7 +104,7 @@
     <header class="relative min-h-[75vh] flex flex-col justify-center items-center text-center px-4 z-10 overflow-hidden pt-32 pb-16">
         <div class="hero-anim absolute w-[600px] h-[600px] bg-electric-blue rounded-full blur-[120px] opacity-5 -z-10"></div>
 
-        <p class="hero-text text-electric-blue font-mono text-sm tracking-widest mb-4 opacity-0 transform translate-y-4">VERSION 4.4.2</p>
+        <p class="hero-text text-electric-blue font-mono text-sm tracking-widest mb-4 opacity-0 transform translate-y-4">VERSION 4.4.3</p>
 
         <h1 class="hero-text text-4xl md:text-6xl lg:text-8xl font-display uppercase tracking-tighter leading-tight py-4 mb-6 opacity-0 transform translate-y-8">
             Master Your<br>
@@ -256,37 +256,66 @@
                 <div class="timeline-indicator w-full h-0 bg-electric-blue shadow-[0_0_15px_#2997FF]"></div>
             </div>
 
-            <!-- v4.4.2 — LATEST -->
+            <!-- v4.4.3 — LATEST -->
             <div class="log-entry relative grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
                 <div class="md:text-right md:pr-12">
                     <div class="inline-block px-3 py-1 border border-electric-blue text-electric-blue text-[10px] font-mono uppercase mb-4 shadow-[0_0_10px_rgba(41,151,255,0.3)]">Latest Release</div>
-                    <h3 class="text-4xl font-display uppercase mb-2">v4.4.2</h3>
-                    <p class="font-mono text-sm text-gray-500">FEB 19, 2026</p>
+                    <h3 class="text-4xl font-display uppercase mb-2">v4.4.3</h3>
+                    <p class="font-mono text-sm text-gray-500">FEB 25, 2026</p>
                 </div>
                 <div class="md:pl-12 relative">
                     <div class="hidden md:block absolute left-[-5px] top-6 w-[10px] h-[10px] bg-electric-blue rounded-full shadow-[0_0_10px_#2997FF]"></div>
                     <div class="tech-card p-8 rounded-xl border-t-4 border-t-electric-blue">
-                        <h4 class="text-xl font-bold mb-4 text-white">Bug Fixes</h4>
+                        <h4 class="text-xl font-bold mb-4 text-white">Browser Sync + Bug Fixes</h4>
                         <p class="text-gray-300 mb-6 leading-relaxed text-sm">
-                            Fixes a regression where the forward/rewind buttons would stay permanently visible instead of hiding with the rest of the player controls. Firefox-only.
+                            Settings now sync across devices via Firefox Sync or Chrome Sync. Also fixes rapid skip button clicks being silently dropped, plus internal code quality improvements.
                         </p>
                         <ul class="space-y-3 text-gray-400 text-sm">
                             <li class="flex items-start gap-3">
                                 <span class="mt-1.5 w-1.5 h-1.5 bg-electric-blue rounded-full flex-shrink-0"></span>
-                                <span>Buttons now use YouTube's native <code class="text-xs bg-white/10 px-1 py-0.5 rounded font-mono">ytp-autohide-fade-transition</code> class, so their visibility is managed directly by the player</span>
+                                <span><strong class="text-gray-200">Browser Sync:</strong> All settings — skip times, hotkeys, presets, button position, theme — now sync automatically across your devices. No setup required. Stats remain local</span>
                             </li>
                             <li class="flex items-start gap-3">
                                 <span class="mt-1.5 w-1.5 h-1.5 bg-electric-blue rounded-full flex-shrink-0"></span>
-                                <span>Player controls no longer disappear while actively clicking or holding the buttons</span>
+                                <span><strong class="text-gray-200">Button responsiveness fix:</strong> Rapid clicks on the skip buttons no longer get silently dropped. The buffering guard was incorrectly blocking on <code class="text-xs bg-white/10 px-1 py-0.5 rounded font-mono">v.seeking</code> — a state the extension itself caused — so every second tap at normal click speed was eaten</span>
                             </li>
                             <li class="flex items-start gap-3">
                                 <span class="mt-1.5 w-1.5 h-1.5 bg-electric-blue rounded-full flex-shrink-0"></span>
-                                <span>Buffering indicator no longer flashes when clicking buttons while the video is loading</span>
+                                <span>Settings changes now propagate immediately to all open YouTube tabs without a page reload</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="mt-1.5 w-1.5 h-1.5 bg-gray-500 rounded-full flex-shrink-0"></span>
+                                <span>Fixed an orphaned retry timer that could fire after SPA navigation, causing a stale re-injection attempt on the new page</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="mt-1.5 w-1.5 h-1.5 bg-gray-500 rounded-full flex-shrink-0"></span>
+                                <span>Fixed the Progress Bar Update Delay field showing 100ms in Advanced Settings before the popup finished loading</span>
                             </li>
                             <li class="flex items-start gap-3">
                                 <span class="mt-1.5 w-1.5 h-1.5 bg-gray-600 rounded-full flex-shrink-0"></span>
-                                <span class="text-gray-500">Removed ~80 lines of custom autohide guard logic that was fighting YouTube's player internals</span>
+                                <span class="text-gray-500">Removed 3 unused SVG icon definitions from the popup and various internal dead code cleanup</span>
                             </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- v4.4.2 -->
+            <div class="log-entry relative grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 opacity-60 hover:opacity-100 transition-opacity duration-500">
+                <div class="md:text-right md:pr-12">
+                    <h3 class="text-2xl font-display uppercase mb-2 text-gray-400">v4.4.2</h3>
+                    <p class="font-mono text-sm text-gray-600">FEB 19, 2026</p>
+                </div>
+                <div class="md:pl-12 relative">
+                    <div class="hidden md:block absolute left-[-3px] top-3 w-[6px] h-[6px] bg-gray-600 rounded-full"></div>
+                    <div class="tech-card p-8 rounded-xl border-t-4 border-t-gray-700">
+                        <h4 class="text-lg font-bold mb-4 text-white">Bug Fixes</h4>
+                        <p class="text-gray-300 mb-6 leading-relaxed text-sm">Fixes a regression where the forward/rewind buttons would stay permanently visible instead of hiding with the rest of the player controls. Firefox-only.</p>
+                        <ul class="space-y-3 text-gray-400 text-sm">
+                            <li class="flex items-start gap-3"><span class="mt-1.5 w-1.5 h-1.5 bg-gray-500 rounded-full flex-shrink-0"></span><span>Buttons now use YouTube's native <code class="text-xs bg-white/10 px-1 py-0.5 rounded font-mono">ytp-autohide-fade-transition</code> class, so their visibility is managed directly by the player</span></li>
+                            <li class="flex items-start gap-3"><span class="mt-1.5 w-1.5 h-1.5 bg-gray-500 rounded-full flex-shrink-0"></span><span>Player controls no longer disappear while actively clicking or holding the buttons</span></li>
+                            <li class="flex items-start gap-3"><span class="mt-1.5 w-1.5 h-1.5 bg-gray-500 rounded-full flex-shrink-0"></span><span>Buffering indicator no longer flashes when clicking buttons while the video is loading</span></li>
+                            <li class="flex items-start gap-3"><span class="mt-1.5 w-1.5 h-1.5 bg-gray-600 rounded-full flex-shrink-0"></span><span class="text-gray-500">Removed ~80 lines of custom autohide guard logic that was fighting YouTube's player internals</span></li>
                         </ul>
                     </div>
                 </div>
@@ -550,7 +579,7 @@
         const userCountText = document.getElementById('user-count-text');
         const progressBar = document.getElementById('progress-bar');
         const goal = 5000;
-        const chromeUserCount = 528;
+        const chromeUserCount = 530;
 
         async function getFirefoxUserCount() {
             try {
@@ -611,4 +640,3 @@
     </script>
 </body>
 </html>
-
