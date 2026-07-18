@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" class="antialiased" style="color-scheme: dark;">
+<html lang="en" class="antialiased">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="dark">
-    <title>YouTube Fast Forward & Rewind</title>
+    <title>YouTube Fast Forward &amp; Rewind</title>
     <link rel="icon" type="image/svg+xml" href="Icon/FFRWIcon.svg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,6 +41,7 @@
         }
     </script>
     <style>
+        html { color-scheme: dark; }
         body { background-color: #050505; color: #E2E2E2; overflow-x: hidden; }
         html.lenis { height: auto; }
         .lenis.lenis-smooth { scroll-behavior: auto; }
@@ -76,7 +77,7 @@
             transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
         #older-logs.expanded {
-            max-height: 5000px;
+            max-height: 12000px;
             opacity: 1;
         }
         .progress-fill {
@@ -90,7 +91,7 @@
 
     <nav class="fixed top-0 w-full z-40 px-6 py-6 flex flex-col md:flex-row justify-between items-center bg-obsidian/80 backdrop-blur-md border-b border-white/5">
         <div class="text-xs font-display tracking-widest-plus uppercase text-white mb-4 md:mb-0">
-            YouTube Fast Forward & Rewind
+            YouTube Fast Forward &amp; Rewind
         </div>
         <div class="flex flex-wrap justify-center gap-6 text-xs font-mono items-center">
             <a href="https://buymeacoffee.com/laskco" target="_blank" class="nav-btn text-warning hover:text-white transition-colors">COFFEE</a>
@@ -104,7 +105,7 @@
     <header class="relative min-h-[75vh] flex flex-col justify-center items-center text-center px-4 z-10 overflow-hidden pt-32 pb-16">
         <div class="hero-anim absolute w-[600px] h-[600px] bg-electric-blue rounded-full blur-[120px] opacity-5 -z-10"></div>
 
-        <p class="hero-text text-electric-blue font-mono text-sm tracking-widest mb-4 opacity-0 transform translate-y-4">VERSION 4.4.4</p>
+        <p class="hero-text text-electric-blue font-mono text-sm tracking-widest mb-4 opacity-0 transform translate-y-4">VERSION 5.0.0</p>
 
         <h1 class="hero-text text-4xl md:text-6xl lg:text-8xl font-display uppercase tracking-tighter leading-tight py-4 mb-6 opacity-0 transform translate-y-8">
             Master Your<br>
@@ -199,7 +200,7 @@
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
                         </div>
                         <div>
-                            <h3 class="text-lg font-display uppercase text-white group-hover:text-electric-blue transition-colors">Keyboard Dominance & Auto-Save</h3>
+                            <h3 class="text-lg font-display uppercase text-white group-hover:text-electric-blue transition-colors">Keyboard Dominance &amp; Auto-Save</h3>
                             <p class="text-gray-400 text-sm mt-1">Override default YouTube shortcuts. Set custom durations for left/right arrows. All settings persist automatically.</p>
                         </div>
                     </div>
@@ -256,61 +257,173 @@
                 <div class="timeline-indicator w-full h-0 bg-electric-blue shadow-[0_0_15px_#2997FF]"></div>
             </div>
 
-            <!-- v4.4.4 — LATEST -->
+            <!-- v5.0.0 — LATEST -->
             <div class="log-entry relative grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
                 <div class="md:text-right md:pr-12">
                     <div class="inline-block px-3 py-1 border border-electric-blue text-electric-blue text-[10px] font-mono uppercase mb-4 shadow-[0_0_10px_rgba(41,151,255,0.3)]">Latest Release</div>
-                    <h3 class="text-4xl font-display uppercase mb-2">v4.4.4</h3>
-                    <p class="font-mono text-sm text-gray-500">APR 15, 2026</p>
+                    <h3 class="text-4xl font-display uppercase mb-2">v5.0.0</h3>
+                    <p class="font-mono text-sm text-gray-500">JUL 17, 2026</p>
                 </div>
                 <div class="md:pl-12 relative">
                     <div class="hidden md:block absolute left-[-5px] top-6 w-[10px] h-[10px] bg-electric-blue rounded-full shadow-[0_0_10px_#2997FF]"></div>
                     <div class="tech-card p-8 rounded-xl border-t-4 border-t-electric-blue">
-                        <h4 class="text-xl font-bold mb-4 text-white">Reliability & Bug Fixes</h4>
+                        <h4 class="text-xl font-bold mb-4 text-white">The Largest Update Yet</h4>
+                        <p class="text-gray-300 mb-6 leading-relaxed text-sm">
+                            Version 5.0.0 rebuilds much of the extension for better reliability, responsiveness, accessibility, browser compatibility, and long-term maintainability while preserving the familiar YouTube-integrated controls.
+                        </p>
+                        <div class="space-y-8 text-sm">
+                            <div>
+                                <h5 class="font-mono text-xs uppercase tracking-widest text-electric-blue mb-3">Player Controls &amp; Seeking</h5>
+                                <ul class="space-y-3 text-gray-400">
+                                    <li>• Rebuilt how the extension finds, tracks, and reconnects to YouTube's active video player.</li>
+                                    <li>• Preserved the familiar native YouTube placement and spacing for both left-side and right-side skip controls.</li>
+                                    <li>• Improved recovery when YouTube replaces the player, changes videos without reloading, or rebuilds its control bar.</li>
+                                    <li>• Added safer detection for watch pages, fullscreen playback, preview-player exclusions, and alternate control-bar structures.</li>
+                                    <li>• Prevented duplicate controls and limited cleanup to extension-owned elements.</li>
+                                    <li>• Stopped unnecessary player observation while button skips are disabled.</li>
+                                    <li>• Improved retry behavior when YouTube's controls are not ready.</li>
+                                    <li>• Added a manual <strong class="text-gray-200">Re-inject Buttons</strong> action with accurate status feedback.</li>
+                                    <li>• Hardened seek calculations against invalid settings, incomplete metadata, buffering, and unusual durations.</li>
+                                    <li>• Improved press-and-hold seeking and cleanup on release, cancellation, lost focus, and context menus.</li>
+                                    <li>• Improved progress-bar refresh behavior without constantly generating synthetic player activity.</li>
+                                    <li>• Added safer handling when videos are replaced, removed, paused, buffering, seeking, or changing sources.</li>
+                                    <li>• Restored exact native control-bar positioning, fullscreen spacing, and hidden-control pointer behavior.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h5 class="font-mono text-xs uppercase tracking-widest text-electric-blue mb-3">Keyboard Controls</h5>
+                                <ul class="space-y-3 text-gray-400">
+                                    <li>• Reworked keyboard shortcut handling for predictable forward, rewind, and press-and-hold behavior.</li>
+                                    <li>• Custom hotkeys are normalized and validated before use; duplicate or invalid stored keys repair automatically.</li>
+                                    <li>• Shortcuts now operate only on supported YouTube watch pages.</li>
+                                    <li>• Inputs, editable content, buttons, links, sliders, and other interactive controls no longer lose their keys.</li>
+                                    <li>• Unsafe modifier combinations and blocked browser or system keys are rejected.</li>
+                                    <li>• Improved supported media-key handling.</li>
+                                    <li>• Held shortcuts stop safely when focus changes, the page hides, navigation occurs, or the key is released.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h5 class="font-mono text-xs uppercase tracking-widest text-electric-blue mb-3">Settings &amp; Popup</h5>
+                                <ul class="space-y-3 text-gray-400">
+                                    <li>• Reworked the popup's settings model and element handling to prevent stale state.</li>
+                                    <li>• Added strict validation and safe limits for skip times, presets, delays, hold intervals, hotkeys, statistics, and toggles.</li>
+                                    <li>• Corrupt or outdated stored values are repaired instead of breaking the popup or player.</li>
+                                    <li>• Preferences update live across the popup, content script, and other open tabs.</li>
+                                    <li>• Older asynchronous storage reads can no longer overwrite newer settings.</li>
+                                    <li>• Improved preset editing, resetting, saving, and contextual labels.</li>
+                                    <li>• Improved spinner controls with descriptive accessible labels.</li>
+                                    <li>• Improved hotkey editing, conflict detection, cancellation, reset behavior, and displayed key names.</li>
+                                    <li>• Improved toggle labels and scoped disabled states to only their related controls.</li>
+                                    <li>• Preserved the advanced-panel state locally without syncing interface-only state between devices.</li>
+                                    <li>• Improved initialization and recovery when the background context is temporarily unavailable.</li>
+                                    <li>• Isolated popup styling from YouTube player styling while preserving dark and light themes.</li>
+                                    <li>• The popup version now comes directly from the installed manifest.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h5 class="font-mono text-xs uppercase tracking-widest text-electric-blue mb-3">Statistics &amp; Multi-Tab Reliability</h5>
+                                <ul class="space-y-3 text-gray-400">
+                                    <li>• Rebuilt statistics updates to prevent lost totals when multiple YouTube tabs skip simultaneously.</li>
+                                    <li>• Statistics changes are serialized in the background before storage writes.</li>
+                                    <li>• Content scripts batch and flush pending statistics with fewer storage operations.</li>
+                                    <li>• New batches wait for in-progress writes instead of overwriting them.</li>
+                                    <li>• Statistics reset now flushes pending skips from open tabs first.</li>
+                                    <li>• Failed tab flushes stop the reset and report the problem instead of silently losing data.</li>
+                                    <li>• Statistics remain local while playback preferences use synchronized extension storage.</li>
+                                    <li>• Existing valid preferences and progress-update delays survive the upgrade.</li>
+                                    <li>• Deprecated or incorrectly located storage values are migrated or removed automatically.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h5 class="font-mono text-xs uppercase tracking-widest text-electric-blue mb-3">Diagnostics &amp; Error Handling</h5>
+                                <ul class="space-y-3 text-gray-400">
+                                    <li>• Added a local log containing up to the 10 most recent actionable extension errors.</li>
+                                    <li>• Added a red diagnostics indicator to the Statistics header when errors are available.</li>
+                                    <li>• Selecting the indicator copies recent diagnostics for a bug report.</li>
+                                    <li>• Diagnostic entries are sanitized and bounded before storage.</li>
+                                    <li>• Generic <code class="text-xs bg-white/10 px-1 py-0.5 rounded font-mono">[object Event]</code> video events are cleaned up and no longer logged as useful errors.</li>
+                                    <li>• Background, popup, messaging, storage, injection, and playback failures now include clearer context.</li>
+                                    <li>• Diagnostics stay on-device and are never transmitted automatically.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h5 class="font-mono text-xs uppercase tracking-widest text-electric-blue mb-3">Accessibility</h5>
+                                <ul class="space-y-3 text-gray-400">
+                                    <li>• Player controls support Enter and Space without accidental repeated activation.</li>
+                                    <li>• Added accessible names, pressed states, expanded states, live regions, and contextual labels.</li>
+                                    <li>• Added visible keyboard focus styles to player and popup controls.</li>
+                                    <li>• Toggle inputs remain available to assistive technology.</li>
+                                    <li>• Improved contrast and reduced-motion behavior.</li>
+                                    <li>• Improved labels for tooltips, presets, themes, resets, donations, positions, and advanced settings.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h5 class="font-mono text-xs uppercase tracking-widest text-electric-blue mb-3">Privacy, Permissions &amp; Compatibility</h5>
+                                <ul class="space-y-3 text-gray-400">
+                                    <li>• Removed the broad <code class="text-xs bg-white/10 px-1 py-0.5 rounded font-mono">tabs</code> permission.</li>
+                                    <li>• Restricted page access to secure <code class="text-xs bg-white/10 px-1 py-0.5 rounded font-mono">https://*.youtube.com/*</code> pages.</li>
+                                    <li>• Removed an unnecessary web-accessible icon declaration.</li>
+                                    <li>• Added an explicit extension-page Content Security Policy.</li>
+                                    <li>• Added Mozilla's declaration that the extension collects no data.</li>
+                                    <li>• Added browser-specific Manifest V3 builds: service worker for Chrome and background script for Firefox.</li>
+                                    <li>• Supported versions are Chrome 111+, Firefox Desktop 140+, and Firefox for Android 142+.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h5 class="font-mono text-xs uppercase tracking-widest text-electric-blue mb-3">Performance, Builds &amp; Testing</h5>
+                                <ul class="space-y-3 text-gray-400">
+                                    <li>• Reduced unnecessary mutation observation, repeated initialization, stale timers, duplicate listeners, and storage work.</li>
+                                    <li>• Centralized settings defaults, coercion, normalization, and storage ownership.</li>
+                                    <li>• Split player CSS from popup CSS so YouTube receives only its small required stylesheet.</li>
+                                    <li>• Added deterministic npm builds for Chrome and Firefox.</li>
+                                    <li>• Added JavaScript, HTML, CSS, dead-code, duplicate-code, security, and Firefox-extension validation.</li>
+                                    <li>• Added 21 regression tests covering settings, statistics, migration, resets, diagnostics, seeking, keyboard safety, reinjection, storage races, accessibility, manifests, assets, and exact YouTube positioning.</li>
+                                    <li>• Added GitHub Actions validation for every push to the main branch and every pull request.</li>
+                                </ul>
+                            </div>
+
+                            <div class="pt-6 border-t border-white/10">
+                                <p class="text-gray-300 leading-relaxed">Existing valid settings migrate automatically. Reload any YouTube tabs that were already open when the extension updated.</p>
+                                <a href="https://github.com/Laskco/YouTube-Fast-Forward-and-Rewind/releases/tag/FastForward5.0.0" class="inline-flex mt-4 font-mono text-xs uppercase tracking-widest text-electric-blue hover:text-white transition-colors">View GitHub Release →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HIDDEN OLDER LOGS -->
+            <div id="older-logs">
+            <!-- v4.4.4 -->
+            <div class="log-entry relative grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 opacity-60 hover:opacity-100 transition-opacity duration-500">
+                <div class="md:text-right md:pr-12">
+                    <h3 class="text-2xl font-display uppercase mb-2 text-gray-400">v4.4.4</h3>
+                    <p class="font-mono text-sm text-gray-600">APR 15, 2026</p>
+                </div>
+                <div class="md:pl-12 relative">
+                    <div class="hidden md:block absolute left-[-3px] top-3 w-[6px] h-[6px] bg-gray-600 rounded-full"></div>
+                    <div class="tech-card p-8 rounded-xl border-t-4 border-t-gray-700">
+                        <h4 class="text-lg font-bold mb-4 text-white">Reliability &amp; Bug Fixes</h4>
                         <p class="text-gray-300 mb-6 leading-relaxed text-sm">
                             A big under-the-hood update focused on fixing things that were subtly broken. Skipping is more reliable, the buttons behave better, and several edge cases that caused frustrating behaviour have been resolved.
                         </p>
                         <ul class="space-y-3 text-gray-400 text-sm">
-                            <li class="flex items-start gap-3">
-                                <span class="mt-1.5 w-1.5 h-1.5 bg-electric-blue rounded-full flex-shrink-0"></span>
-                                <span><strong class="text-gray-200">Hold-to-seek no longer jumps randomly:</strong> Holding the skip buttons could sometimes cause massive unexpected jumps (several minutes forward/back). This is now fixed — holds seek at a consistent pace</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <span class="mt-1.5 w-1.5 h-1.5 bg-electric-blue rounded-full flex-shrink-0"></span>
-                                <span><strong class="text-gray-200">4K videos skip more reliably:</strong> The extension was incorrectly treating 4K videos as "still loading" and blocking skips. It's now smarter about detecting when a video is actually buffering vs just decoding</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <span class="mt-1.5 w-1.5 h-1.5 bg-electric-blue rounded-full flex-shrink-0"></span>
-                                <span><strong class="text-gray-200">Cursor no longer sticks after controls hide:</strong> When YouTube's player bar fades away, the mouse cursor no longer stays as a hand pointer over where the buttons were</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <span class="mt-1.5 w-1.5 h-1.5 bg-electric-blue rounded-full flex-shrink-0"></span>
-                                <span><strong class="text-gray-200">Buttons appear faster and more reliably:</strong> The skip buttons now load faster after navigating between videos, and are less likely to go missing after YouTube updates its layout</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <span class="mt-1.5 w-1.5 h-1.5 bg-electric-blue rounded-full flex-shrink-0"></span>
-                                <span><strong class="text-gray-200">Live statistics:</strong> The skip counter in the popup now updates in real-time as you skip — no more needing to close and reopen the popup to see your latest stats</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <span class="mt-1.5 w-1.5 h-1.5 bg-electric-blue rounded-full flex-shrink-0"></span>
-                                <span><strong class="text-gray-200">Video Speed Controller compatibility:</strong> If you use the Video Speed Controller extension alongside this one, playback rate tracking now works correctly</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <span class="mt-1.5 w-1.5 h-1.5 bg-gray-500 rounded-full flex-shrink-0"></span>
-                                <span>Fixed hold-to-seek stopping after a single skip on Firefox</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <span class="mt-1.5 w-1.5 h-1.5 bg-gray-500 rounded-full flex-shrink-0"></span>
-                                <span>Fixed hold-to-seek immediately cancelling itself the moment you pressed down</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <span class="mt-1.5 w-1.5 h-1.5 bg-gray-500 rounded-full flex-shrink-0"></span>
-                                <span>Fixed buttons appearing after the chapter title instead of before it</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <span class="mt-1.5 w-1.5 h-1.5 bg-gray-600 rounded-full flex-shrink-0"></span>
-                                <span class="text-gray-500">General internal cleanup — removed ~700 lines of unused code to reduce memory usage and improve performance</span>
-                            </li>
+                            <li class="flex items-start gap-3"><span class="mt-1.5 w-1.5 h-1.5 bg-gray-500 rounded-full flex-shrink-0"></span><span><strong class="text-gray-200">Hold-to-seek no longer jumps randomly:</strong> Holding the skip buttons could sometimes cause massive unexpected jumps (several minutes forward/back). This is now fixed — holds seek at a consistent pace</span></li>
+                            <li class="flex items-start gap-3"><span class="mt-1.5 w-1.5 h-1.5 bg-gray-500 rounded-full flex-shrink-0"></span><span><strong class="text-gray-200">4K videos skip more reliably:</strong> The extension was incorrectly treating 4K videos as "still loading" and blocking skips. It's now smarter about detecting when a video is actually buffering vs just decoding</span></li>
+                            <li class="flex items-start gap-3"><span class="mt-1.5 w-1.5 h-1.5 bg-gray-500 rounded-full flex-shrink-0"></span><span><strong class="text-gray-200">Cursor no longer sticks after controls hide:</strong> When YouTube's player bar fades away, the mouse cursor no longer stays as a hand pointer over where the buttons were</span></li>
+                            <li class="flex items-start gap-3"><span class="mt-1.5 w-1.5 h-1.5 bg-gray-500 rounded-full flex-shrink-0"></span><span><strong class="text-gray-200">Buttons appear faster and more reliably:</strong> The skip buttons now load faster after navigating between videos, and are less likely to go missing after YouTube updates its layout</span></li>
+                            <li class="flex items-start gap-3"><span class="mt-1.5 w-1.5 h-1.5 bg-gray-500 rounded-full flex-shrink-0"></span><span><strong class="text-gray-200">Live statistics:</strong> The skip counter in the popup now updates in real-time as you skip — no more needing to close and reopen the popup to see your latest stats</span></li>
+                            <li class="flex items-start gap-3"><span class="mt-1.5 w-1.5 h-1.5 bg-gray-500 rounded-full flex-shrink-0"></span><span><strong class="text-gray-200">Video Speed Controller compatibility:</strong> If you use the Video Speed Controller extension alongside this one, playback rate tracking now works correctly</span></li>
+                            <li class="flex items-start gap-3"><span class="mt-1.5 w-1.5 h-1.5 bg-gray-500 rounded-full flex-shrink-0"></span><span>Fixed hold-to-seek stopping after a single skip on Firefox</span></li>
+                            <li class="flex items-start gap-3"><span class="mt-1.5 w-1.5 h-1.5 bg-gray-500 rounded-full flex-shrink-0"></span><span>Fixed hold-to-seek immediately cancelling itself the moment you pressed down</span></li>
+                            <li class="flex items-start gap-3"><span class="mt-1.5 w-1.5 h-1.5 bg-gray-500 rounded-full flex-shrink-0"></span><span>Fixed buttons appearing after the chapter title instead of before it</span></li>
+                            <li class="flex items-start gap-3"><span class="mt-1.5 w-1.5 h-1.5 bg-gray-600 rounded-full flex-shrink-0"></span><span class="text-gray-500">General internal cleanup — removed ~700 lines of unused code to reduce memory usage and improve performance</span></li>
                         </ul>
                     </div>
                 </div>
@@ -357,8 +470,6 @@
                 </div>
             </div>
 
-            <!-- HIDDEN OLDER LOGS -->
-            <div id="older-logs">
                 <!-- v4.4.1 -->
                 <div class="log-entry relative grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 opacity-60 hover:opacity-100 transition-opacity duration-500">
                     <div class="md:text-right md:pr-12">
@@ -466,7 +577,7 @@
                 </div>
                 <div class="log-entry relative grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 opacity-60 hover:opacity-100 transition-opacity duration-500">
                     <div class="md:text-right md:pr-12"><h3 class="text-2xl font-display uppercase mb-2 text-gray-400">v4.2.5</h3><p class="font-mono text-sm text-gray-600">AUG 03, 2025</p></div>
-                    <div class="md:pl-12 relative"><div class="hidden md:block absolute left-[-3px] top-3 w-[6px] h-[6px] bg-gray-600 rounded-full"></div><p class="text-gray-400 text-sm">Readjusted the Action & Player Timing card for a more compact layout.</p></div>
+                    <div class="md:pl-12 relative"><div class="hidden md:block absolute left-[-3px] top-3 w-[6px] h-[6px] bg-gray-600 rounded-full"></div><p class="text-gray-400 text-sm">Readjusted the Action &amp; Player Timing card for a more compact layout.</p></div>
                 </div>
                 <div class="log-entry relative grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 opacity-60 hover:opacity-100 transition-opacity duration-500">
                     <div class="md:text-right md:pr-12"><h3 class="text-2xl font-display uppercase mb-2 text-gray-400">v4.2.4</h3><p class="font-mono text-sm text-gray-600">AUG 03, 2025</p></div>
@@ -499,7 +610,7 @@
             </div>
 
             <div class="text-center mt-12 relative z-20">
-                <button id="toggle-logs" class="group relative inline-flex items-center gap-2 px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full transition-all duration-300">
+                <button type="button" id="toggle-logs" class="group relative inline-flex items-center gap-2 px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full transition-all duration-300">
                     <span class="font-mono text-xs uppercase tracking-widest text-electric-blue group-hover:text-white transition-colors">View Full History</span>
                     <svg id="toggle-icon" class="w-4 h-4 text-electric-blue group-hover:text-white transition-all transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </button>
@@ -528,7 +639,7 @@
                     </div>
                 </div>
             </div>
-            <div class="mt-24 text-center text-[10px] font-mono text-gray-600">MIT LICENSE. 2025 LASKCO.</div>
+            <div class="mt-24 text-center text-[10px] font-mono text-gray-600">MIT LICENSE. 2026 LASKCO.</div>
         </footer>
     </main>
 
