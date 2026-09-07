@@ -1,0 +1,49 @@
+name: Update user counts
+
+on:
+  schedule:
+    - cron: '23 9 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: user-counts
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node scripts/update-user-counts.mjs
+      - name: Save latest counts
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add user-counts.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Update browser user counts"
+            git push
+          fi
+      # Bot commits do not trigger the normal branch-based Pages build.
+      - uses: actions/configure-pages@v5
+      - name: Prepare site
+        run: |
+          mkdir _site
+          cp index.html user-counts.json _site/
+          cp -R Icon _site/
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - uses: actions/deploy-pages@v4
+        id: deployment
