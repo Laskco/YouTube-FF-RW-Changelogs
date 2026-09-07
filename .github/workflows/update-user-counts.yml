@@ -2,7 +2,7 @@ name: Update user counts
 
 on:
   schedule:
-    - cron: '23 9 * * *'
+    - cron: '23 9 * * 0'
   workflow_dispatch:
 
 permissions:
