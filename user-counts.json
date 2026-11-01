@@ -1,10 +1,10 @@
 {
   "chrome": {
     "users": 1000,
-    "updatedAt": "2026-10-25T13:45:33.069Z"
+    "updatedAt": "2026-11-01T16:07:30.806Z"
   },
   "firefox": {
-    "users": 923,
-    "updatedAt": "2026-10-25T13:45:33.288Z"
+    "users": 938,
+    "updatedAt": "2026-11-01T16:07:30.983Z"
   }
 }
